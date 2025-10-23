@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formspree.io; img-src 'self' data: https:; frame-src 'none'; object-src 'none';">
     <title>Collaborate With Us - OpenCortisol Project</title>
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -24,15 +25,22 @@
             <div class="container">
                 <div class="card" style="max-width: 800px; margin: 0 auto;">
                     <h2 class="heading-2">Collaboration Form</h2>
-                    <form id="collaborate-form" style="display: grid; gap: 1rem;">
+                    <form action="https://formspree.io/f/manprwba" method="POST" style="display: grid; gap: 1rem;" data-csrf-protection="true">
+                        <!-- Static CSRF Protection -->
+                        <input type="hidden" name="_csrf_token" id="csrf-token" value="">
+                        <input type="hidden" name="_form_origin" value="">
+                        <input type="hidden" name="_timestamp" value="">
+                        
+                        <!-- Honeypot field - hidden from humans -->
+                        <input type="text" name="website" id="website" style="position: absolute; left: -9999px; opacity: 0;" tabindex="-1" autocomplete="off">
                         <div>
                             <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Full Name *</label>
-                            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px;">
+                            <input type="text" id="name" name="name" required maxlength="100" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px;">
                         </div>
                         
                         <div>
                             <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address *</label>
-                            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px;">
+                            <input type="email" id="email" name="email" required maxlength="100" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px;">
                         </div>
                         
                         <div>
@@ -54,7 +62,7 @@
                         
                         <div>
                             <label for="experience" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Relevant Experience</label>
-                            <textarea id="experience" name="experience" rows="4" placeholder="Describe your relevant experience, qualifications, or interest in this project..." style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px; resize: vertical;"></textarea>
+                            <textarea id="experience" name="experience" rows="4" maxlength="1000" placeholder="Describe your relevant experience, qualifications, or interest in this project..." style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px; resize: vertical;"></textarea>
                         </div>
                         
                         <div>
@@ -101,16 +109,20 @@
                         
                         <div>
                             <label for="location" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Location</label>
-                            <input type="text" id="location" name="location" placeholder="City, Country" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px;">
+                            <input type="text" id="location" name="location" maxlength="100" placeholder="City, Country" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px;">
                         </div>
                         
                         <div>
                             <label for="additional-info" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Additional Information</label>
-                            <textarea id="additional-info" name="additional-info" rows="3" placeholder="Any additional information you'd like to share..." style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px; resize: vertical;"></textarea>
+                            <textarea id="additional-info" name="additional-info" rows="3" maxlength="500" placeholder="Any additional information you'd like to share..." style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px; resize: vertical;"></textarea>
+                        </div>
+                        
+                        <div style="font-size: 0.9rem; color: #6b7280; margin-top: 1rem;">
+                            <p><strong>Privacy Notice:</strong> Your information will be sent directly to nverad@unal.edu.co and used solely for collaboration purposes. We do not store or share your data with third parties.</p>
                         </div>
                         
                         <div style="margin-top: 1rem;">
-                            <button type="submit" class="btn btn--primary" style="width: 100%;">Submit Collaboration Request</button>
+                            <button type="submit" class="btn btn--primary" style="width: 100%;" id="submit-btn" disabled>Submit Collaboration Request</button>
                         </div>
                     </form>
                 </div>
