@@ -5,18 +5,21 @@ Open-source hydrocortisone pump technology website built with modular BEM CSS an
 ## Local Development
 
 ### Prerequisites
-- Node.js installed on your system
-- OR use PowerShell (Windows built-in)
+- Node.js with TypeScript installed (`npm install -g typescript`)
+- OR use PowerShell (Windows built-in) with TypeScript
 
 ### Build and Test Locally
 
 1. **Build the site:**
    ```bash
-   # With Node.js:
+   # With Node.js (compiles TypeScript + builds templates):
    node build.js
    
    # OR with PowerShell (Windows):
    powershell -ExecutionPolicy Bypass -File build.ps1
+   
+   # OR compile TypeScript only:
+   tsc
    ```
 
 2. **View the website:**

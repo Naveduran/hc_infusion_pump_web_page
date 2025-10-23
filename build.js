@@ -1,5 +1,14 @@
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
+
+// Compile TypeScript first
+try {
+  console.log('Compiling TypeScript...');
+  execSync('tsc', { stdio: 'inherit' });
+} catch (error) {
+  console.log('TypeScript compilation failed, continuing with existing JS files...');
+}
 
 // Read templates
 const header = fs.readFileSync('_includes/header.html', 'utf8');

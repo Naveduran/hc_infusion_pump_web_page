@@ -1,4 +1,13 @@
 # PowerShell build script - alternative to Node.js
+
+# Compile TypeScript first
+try {
+    Write-Host "Compiling TypeScript..."
+    tsc
+} catch {
+    Write-Host "TypeScript compilation failed, continuing with existing JS files..."
+}
+
 $header = Get-Content "_includes\header.html" -Raw
 $footer = Get-Content "_includes\footer.html" -Raw
 

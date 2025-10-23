@@ -5,7 +5,7 @@
     "moduleResolution": "node",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "allowJs": true,
-    "outDir": "./dist",
+    "outDir": "./assets/js",
     "rootDir": "./assets/js",
     "strict": true,
     "esModuleInterop": true,

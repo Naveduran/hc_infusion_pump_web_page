@@ -1,6 +1,11 @@
 # Build output
 dist/
 
+# Compiled JavaScript from TypeScript
+assets/js/**/*.js
+assets/js/**/*.js.map
+assets/js/**/*.d.ts
+
 # Node.js dependencies (if using npm)
 node_modules/
 
