@@ -4,7 +4,8 @@
   "description": "OpenCortisol Project website with TypeScript support",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "node build.js",
+    "build:ts": "tsc",
     "watch": "tsc --watch",
     "dev": "tsc --watch"
   },

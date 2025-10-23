@@ -1,0 +1,17 @@
+# Build output
+dist/
+
+# Node.js dependencies (if using npm)
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp

@@ -1,0 +1,28 @@
+.hero {
+  text-align: center;
+  padding: var(--space-12) 0;
+  background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-200) 100%);
+  margin-top: 80px;
+}
+
+.hero__description {
+  margin-bottom: var(--space-8);
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-8) 0;
+  }
+  
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
