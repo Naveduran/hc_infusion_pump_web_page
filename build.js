@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+import fs from 'fs';
+import path from 'path';
+import { execSync } from 'child_process';
 
 // Compile TypeScript first
 try {
@@ -56,3 +56,8 @@ htmlFiles.forEach(file => {
 });
 
 console.log('Build completed successfully!');
+
+// Handle ES module execution
+if (import.meta.url === `file://${process.argv[1]}`) {
+  // This file was run directly
+}
