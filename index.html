@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenCortisol Project - Restoring Natural Rhythms</title>
+    <meta name="description" content="Open-source 3D printable hydrocortisone pumps for patients with adrenal insufficiency. Collaborative research for better quality of life.">
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="assets/css/main.css" as="style">
+    <link rel="preload" href="assets/js/main.js" as="script">
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__logo">OpenCortisol Project</div>
+            <ul class="nav__menu">
+                <li><a href="index.html" class="nav__link">Home</a></li>
+                <li><a href="research.html" class="nav__link">Research</a></li>
+                <li><a href="team.html" class="nav__link">Team</a></li>
+                <li><a href="support.html" class="nav__link">Support</a></li>
+                <li><a href="news.html" class="nav__link">News</a></li>
+                <li><a href="bibliography.html" class="nav__link">Sources</a></li>
+                <li><a href="collaborate.html" class="nav__link">Collaborate</a></li>
+            </ul>
+
+            <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+            <nav class="nav__mobile" role="navigation" aria-label="Mobile navigation">
+                <a href="index.html" class="nav__mobile-link">Home</a>
+                <a href="research.html" class="nav__mobile-link">Research</a>
+                <a href="team.html" class="nav__mobile-link">Team</a>
+                <a href="support.html" class="nav__mobile-link">Support</a>
+                <a href="news.html" class="nav__mobile-link">News</a>
+                <a href="bibliography.html" class="nav__mobile-link">Sources</a>
+                <a href="collaborate.html" class="nav__mobile-link">Collaborate</a>
+            </nav>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="heading-1">Restoring Natural Rhythms: Open-Source 3D Printable Hydrocortisone Pumps</h1>
+                <p class="text-large hero__description">
+                    Collaborative research initiative developing accessible, circadian-matched cortisol delivery technology for patients worldwide
+                </p>
+                <div class="hero__actions">
+                    <a href="#problem" class="btn btn--primary">Learn More</a>
+                    <a href="support.html" class="btn btn--secondary">Donate Now</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-separator">
+            From Crisis to Care: Developing Life-Saving Hydrocortisone Technology
+        </div>
+
+        <section id="problem" class="section">
+            <div class="container">
+                <h2 class="heading-2 text-center problem-title">The Problem</h2>
+                <article class="chart-container">
+                    <h3 class="heading-3 chart__title">What Your Body Needs vs. What You Actually Get</h3>
+                    <div class="chart-image">
+                        <img src="assets/images/normal-vs-oralhc.png" alt="Comparison of normal cortisol rhythm vs oral hydrocortisone spikes and crashes" loading="lazy">
+                    </div>
+                    <p class="chart-reference">
+                        Source: <a href="https://link.springer.com/article/10.1007/s13346-022-01183-w" target="_blank" rel="noopener noreferrer">Drug Delivery and Translational Research</a>
+                    </p>
+                </article>
+
+                <article class="problem-section">
+                    <div class="text-center">
+                        <div style="font-size: 4rem;">🎢</div>
+                        <h2 class="heading-2">Your Hormones on a Daily Roller Coaster</h2>
+                    </div>
+                    
+                    <div class="vs-comparison">
+                        <div class="vs-comparison__item vs-comparison__item--oral">
+                            <h3 class="heading-3">Oral Pills = Uncontrollable Roller Coaster</h3>
+                            <ul>
+                                <li>Sudden dangerous spikes after each dose</li>
+                                <li>Life-threatening crashes between doses</li>
+                                <li>No control over the ride</li>
+                                <li>Exhausting and unpredictable</li>
+                            </ul>
+                        </div>
+                        <div class="vs-comparison__divider">VS</div>
+                        <div class="vs-comparison__item vs-comparison__item--pump">
+                            <h3 class="heading-3">🌊 Pump = Gentle, Natural Wave</h3>
+                            <ul>
+                                <li>Smooth, controlled delivery</li>
+                                <li>Matches your body's natural rhythms</li>
+                                <li>Predictable and stable</li>
+                                <li>Energy when you need it, rest when you don't</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Double Damage -->
+                <div class="key-insight">
+                    "You can't win with oral medications - you're either overdosed or underdosed"
+                </div>
+
+                <div class="grid grid--2-cols">
+                    <div class="card card--damage card--damage-overdose">
+                        <h3 class="heading-3">🔴 TOO HIGH (long term dosage)</h3>
+                        <ul>
+                            <li class="text-bold">Bone loss & fractures</li>
+                            <li class="text-bold">Weight gain & diabetes</li>
+                            <li class="text-bold">High blood pressure</li>
+                            <li class="text-bold">Mood swings & anxiety</li>
+                            <li class="text-bold">Increased infections</li>
+                            <li class="text-bold">Cataracts & vision problems</li>
+                        </ul>
+                    </div>
+                    <div class="card card--damage card--damage-underdose">
+                        <h3 class="heading-3">🔵 TOO LOW (long term dosage)</h3>
+                        <ul>
+                            <li class="text-bold">Adrenal crisis (life-threatening)</li>
+                            <li class="text-bold">Extreme fatigue & weakness</li>
+                            <li class="text-bold">Nausea & vomiting</li>
+                            <li class="text-bold">Dangerous low blood pressure</li>
+                            <li class="text-bold">Depression & brain fog</li>
+                            <li class="text-bold">Salt cravings & dehydration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <article class="timeline">
+                    <h3 class="heading-3">A Day in the Life: How Patients Feel Wrong All Day Long</h3>
+                    
+                    <div class="timeline__hour timeline__hour--crash">
+                        <span class="timeline__label">6 AM:</span>
+                        <span>"I can barely get out of bed. My cortisol crashed overnight - I feel like I'm dying."</span>
+                    </div>
+                    
+                    <div class="timeline__hour timeline__hour--spike">
+                        <span class="timeline__label">8 AM:</span>
+                        <span>"Took my pill. Now I'm jittery, anxious, and my heart is racing from the spike."</span>
+                    </div>
+                    
+                    <div class="timeline__hour timeline__hour--crash">
+                        <span class="timeline__label">12 PM:</span>
+                        <span>"The crash hits hard. Exhausted, nauseous, need another dose just to function."</span>
+                    </div>
+                    
+                    <div class="timeline__hour timeline__hour--spike">
+                        <span class="timeline__label">2 PM:</span>
+                        <span>"Another pill, another spike. Feeling wired when I should be steady."</span>
+                    </div>
+                    
+                    <div class="timeline__hour timeline__hour--spike">
+                        <span class="timeline__label">8 PM:</span>
+                        <span>"Should be winding down, but cortisol is still high. Can't relax."</span>
+                    </div>
+                    
+                    <div class="timeline__hour timeline__hour--crash">
+                        <span class="timeline__label">11 PM:</span>
+                        <span>"Finally crashing, but now I can't sleep properly. The cycle starts again..."</span>
+                    </div>
+                    
+                    <p class="text-center text-bold" style="margin-top: 2rem; color: var(--primary-orange);">
+                        This isn't living - it's surviving. Every single day.
+                    </p>
+                </article>
+
+                <!-- Critical Insight -->
+                <div class="key-insight key-insight--last">
+                    "Your body can't handle emergencies when cortisol levels are too low"
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <article class="solution-hero">
+                    <h2 class="heading-2">The Solution: Continuous Subcutaneous Delivery</h2>
+                    <p class="text-large text-bold">
+                        Matches your body's natural rhythm, eliminating both dangerous spikes and life-threatening crashes
+                    </p>
+                    <div class="solution-hero__actions">
+                        <a href="support.html" class="btn btn--primary">Support Research</a>
+                        <a href="collaborate.html" class="btn btn--secondary">Join Our Mission</a>
+                    </div>
+                </article>
+
+                <div class="grid grid--auto-fit">
+                    <div class="card card--benefit">
+                        <h3 class="heading-3">✅ Smooth Delivery</h3>
+                        <p>No more roller coaster - continuous, controlled hormone delivery throughout the day</p>
+                    </div>
+                    <div class="card card--benefit">
+                        <h3 class="heading-3">✅ Natural Rhythms</h3>
+                        <p>High cortisol in morning, low at night - just like your body is designed to work</p>
+                    </div>
+                    <div class="card card--benefit">
+                        <h3 class="heading-3">✅ Emergency Ready</h3>
+                        <p>Your body can respond to stress, illness, and injury with proper cortisol levels</p>
+                    </div>
+                    <div class="card card--benefit">
+                        <h3 class="heading-3">✅ Better Sleep</h3>
+                        <p>Proper nighttime cortisol levels allow for natural, restorative sleep cycles</p>
+                    </div>
+                    <div class="card card--benefit">
+                        <h3 class="heading-3">✅ Stable Energy</h3>
+                        <p>No crashes, no spikes - consistent energy levels throughout your day</p>
+                    </div>
+                    <div class="card card--benefit">
+                        <h3 class="heading-3">✅ Lower Doses</h3>
+                        <p>More effective delivery means less medication needed for better results</p>
+                    </div>
+                </div>
+
+                <h2 class="heading-2 comparison-title">Solution Comparison</h2>
+                <table class="comparison-table" role="table" aria-label="Comparison between oral medications and pump solution">
+                    <caption class="sr-only">Detailed comparison of features between oral medications and our pump solution</caption>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Oral Medications</th>
+                            <th>Our Pump Solution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Delivery Pattern</td>
+                            <td><span class="comparison-table__cross">✗</span> Spikes and crashes</td>
+                            <td><span class="comparison-table__check">✓</span> Smooth, continuous</td>
+                        </tr>
+                        <tr>
+                            <td>Circadian Matching</td>
+                            <td><span class="comparison-table__cross">✗</span> No rhythm matching</td>
+                            <td><span class="comparison-table__check">✓</span> Natural cortisol cycles</td>
+                        </tr>
+                        <tr>
+                            <td>Emergency Response</td>
+                            <td><span class="comparison-table__cross">✗</span> Impaired stress handling</td>
+                            <td><span class="comparison-table__check">✓</span> Body ready for stress</td>
+                        </tr>
+                        <tr>
+                            <td>Sleep Quality</td>
+                            <td><span class="comparison-table__cross">✗</span> Disrupted by high nighttime levels</td>
+                            <td><span class="comparison-table__check">✓</span> Natural sleep cycles</td>
+                        </tr>
+                        <tr>
+                            <td>Energy Levels</td>
+                            <td><span class="comparison-table__cross">✗</span> Unpredictable highs and lows</td>
+                            <td><span class="comparison-table__check">✓</span> Stable throughout day</td>
+                        </tr>
+                        <tr>
+                            <td>Medication Amount</td>
+                            <td><span class="comparison-table__cross">✗</span> Higher doses needed</td>
+                            <td><span class="comparison-table__check">✓</span> Lower, more effective doses</td>
+                        </tr>
+                        <tr>
+                            <td>Accessibility</td>
+                            <td><span class="comparison-table__cross">✗</span> Limited by cost and availability</td>
+                            <td><span class="comparison-table__check">✓</span> Open-source, 3D printable</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="heading-2">Technology Specifications</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step__number">1</div>
+                        <div>
+                            <h4 class="heading-4">Open Source Design</h4>
+                            <p>Freely modifiable code allowing global collaboration and customization for individual patient needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step__number">2</div>
+                        <div>
+                            <h4 class="heading-4">3D Printable Technology</h4>
+                            <p>Low-cost manufacturing using standard 3D printers, making the technology accessible worldwide.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step__number">3</div>
+                        <div>
+                            <h4 class="heading-4">Circadian Programming</h4>
+                            <p>Dosing schedules based on ultradian cortisol cycles, following protocols from Løvås, Nella, and Russell research.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <div class="section-separator">
+            Empowering patients worldwide with affordable, customizable hormone delivery technology
+        </div>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="heading-2">Our Inspiration</h2>
+                <p>Recent research demonstrates the transformative impact of hydrocortisone pumps on patient outcomes:</p>
+                <div class="grid grid--3-cols">
+                    <div class="card">
+                        <h3 class="heading-3">Normalized Hormone Levels</h3>
+                        <p>Studies by Oksnes, Løvås, and Gagliardi show restoration of morning ACTH and cortisol to physiological ranges.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="heading-3">Reduced Crisis Events</h3>
+                        <p>Research by Løvås, Tiwari, and Cardini demonstrates decreased frequency of adrenal crises and hospitalizations.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="heading-3">Improved Quality of Life</h3>
+                        <p>Patients report increased vitality, functionality, and overall satisfaction with pump therapy across multiple studies.</p>
+                    </div>
+                </div>
+                <p class="text-large inspiration__final-text">
+                    Inspired by Fawzi and Payne's 3D printable insulin pumps, we're developing open-source hydrocortisone delivery technology that matches ultradian cortisol rhythms.
+                </p>
+            </div>
+        </section>
+
+
+
+        <div class="section-separator">
+            Bridging the gap between cutting-edge research and patient accessibility
+        </div>
+
+        <section class="section section--cta">
+            <div class="container">
+                <h2 class="heading-2 text-center">Join Our Mission</h2>
+                <p class="text-center text-large cta__description">
+                    Help us make life-saving technology accessible to patients worldwide
+                </p>
+                <div class="text-center cta__actions">
+                    <a href="support.html" class="btn btn--primary">Support Research</a>
+                    <a href="collaborate.html" class="btn btn--secondary">Get Involved</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 OpenCortisol Project. Open-source initiative for better patient care.</p>
+        </div>
+    </footer>
+
+    <script src="simple-menu.js"></script>
+</body>
+</html>

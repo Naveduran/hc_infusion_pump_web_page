@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborate With Us - OpenCortisol Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">OpenCortisol Project</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="bibliography.html">Sources</a></li>
+                <li><a href="collaborate.html">Collaborate</a></li>
+            </ul>
+
+            <button class="menu-toggle">☰</button>
+            <div class="mobile-menu">
+                <a href="index.html">Home</a>
+                <a href="research.html">Research</a>
+                <a href="support.html">Support</a>
+                <a href="news.html">News</a>
+                <a href="bibliography.html">Sources</a>
+                <a href="collaborate.html">Collaborate</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Join Our Research Team</h1>
+                <p style="font-size: 1.2rem; color: #374151;">
+                    Help us develop life-saving hydrocortisone pump technology
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="card" style="max-width: 800px; margin: 0 auto;">
+                    <h2>Collaboration Form</h2>
+                    <form id="collaborate-form" style="display: grid; gap: 1rem;">
+                        <div>
+                            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Full Name *</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px;">
+                        </div>
+                        
+                        <div>
+                            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address *</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px;">
+                        </div>
+                        
+                        <div>
+                            <label for="profession" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Professional Background *</label>
+                            <select id="profession" name="profession" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px;">
+                                <option value="">Select your background</option>
+                                <option value="electronic-engineer">Electronic Engineer</option>
+                                <option value="biomedical-engineer">Biomedical Engineer</option>
+                                <option value="pharmacist">Pharmacist</option>
+                                <option value="endocrinologist">Endocrinologist</option>
+                                <option value="internist">Internal Medicine Physician</option>
+                                <option value="researcher">Research Specialist</option>
+                                <option value="patient">Patient with Adrenal Insufficiency</option>
+                                <option value="caregiver">Family Member/Caregiver</option>
+                                <option value="software-developer">Software Developer</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="experience" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Relevant Experience</label>
+                            <textarea id="experience" name="experience" rows="4" placeholder="Describe your relevant experience, qualifications, or interest in this project..." style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px; resize: vertical;"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label for="contribution" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">How would you like to contribute? *</label>
+                            <div style="display: grid; gap: 0.5rem;">
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" name="contribution" value="technical-development">
+                                    Technical development and design
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" name="contribution" value="clinical-guidance">
+                                    Clinical guidance and protocols
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" name="contribution" value="research-analysis">
+                                    Research and literature analysis
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" name="contribution" value="patient-testing">
+                                    Patient testing and feedback
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" name="contribution" value="networking">
+                                    Connecting us with other specialists
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" name="contribution" value="funding">
+                                    Funding or grant opportunities
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="availability" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Time Commitment</label>
+                            <select id="availability" name="availability" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px;">
+                                <option value="">Select your availability</option>
+                                <option value="few-hours-month">A few hours per month</option>
+                                <option value="few-hours-week">A few hours per week</option>
+                                <option value="part-time">Part-time involvement</option>
+                                <option value="full-time">Full-time collaboration</option>
+                                <option value="project-based">Project-based contributions</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="location" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Location</label>
+                            <input type="text" id="location" name="location" placeholder="City, Country" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px;">
+                        </div>
+                        
+                        <div>
+                            <label for="additional-info" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Additional Information</label>
+                            <textarea id="additional-info" name="additional-info" rows="3" placeholder="Any additional information you'd like to share..." style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px; resize: vertical;"></textarea>
+                        </div>
+                        
+                        <div style="margin-top: 1rem;">
+                            <button type="submit" class="btn-primary" style="width: 100%;">Submit Collaboration Request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: #f8fafc;">
+            <div class="container">
+                <h2>What Happens Next?</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>1. Review</h3>
+                        <p>We'll review your application and match your skills with our current project needs.</p>
+                    </div>
+                    <div class="card">
+                        <h3>2. Connect</h3>
+                        <p>Our team will reach out within 48 hours to discuss collaboration opportunities.</p>
+                    </div>
+                    <div class="card">
+                        <h3>3. Collaborate</h3>
+                        <p>Join our research network and start contributing to life-saving technology development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 OpenCortisol Project. Open-source initiative for better patient care.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

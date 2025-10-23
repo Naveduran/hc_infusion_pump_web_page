@@ -1,0 +1,35 @@
+.card {
+  background: white;
+  padding: var(--space-6);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.card--benefit {
+  background: white;
+  padding: var(--space-6);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.card--damage {
+  padding: var(--space-6);
+  border-radius: var(--border-radius-lg);
+}
+
+.card--damage-overdose {
+  background: linear-gradient(135deg, #fee2e2 0%, #fca5a5 100%);
+}
+
+.card--damage-underdose {
+  background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
+}
+
+.card--team {
+  text-align: center;
+}
+
+.card__image {
+  border-radius: 50%;
+  margin-bottom: var(--space-4);
+}
