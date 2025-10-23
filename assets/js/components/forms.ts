@@ -33,6 +33,20 @@ export class FormHandler {
         input.addEventListener('input', () => this.clearFieldError(input));
       });
       
+      // Add validation for professional background selection
+      const professionalSelect = this.form.querySelector('select[name="professional_type"]') as HTMLSelectElement;
+      const professionalOtherInput = this.form.querySelector('input[name="professional_other"]') as HTMLInputElement;
+      
+      if (professionalSelect) {
+        professionalSelect.addEventListener('change', () => {
+          if (professionalSelect.value === 'other-professional') {
+            professionalOtherInput.setAttribute('required', 'true');
+          } else {
+            professionalOtherInput.removeAttribute('required');
+          }
+        });
+      }
+      
       // Enable submit button after minimum time
       setTimeout(() => {
         const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
@@ -87,14 +101,50 @@ export class FormHandler {
   private validateForm(): boolean {
     if (!this.form) return false;
     
-    const inputs = this.form.querySelectorAll('input[required], textarea[required]') as NodeListOf<HTMLInputElement | HTMLTextAreaElement>;
     let isValid = true;
-
+    
+    // Validate required text inputs
+    const inputs = this.form.querySelectorAll('input[required], textarea[required]') as NodeListOf<HTMLInputElement | HTMLTextAreaElement>;
     inputs.forEach(input => {
       if (!this.validateField(input)) {
         isValid = false;
       }
     });
+    
+    // Validate "Who I am" radio selection
+    const whoIAmRadios = this.form.querySelectorAll('input[name="who_i_am"]') as NodeListOf<HTMLInputElement>;
+    const whoIAmSelected = Array.from(whoIAmRadios).some(radio => radio.checked);
+    
+    if (!whoIAmSelected) {
+      alert('Please select who you are.');
+      isValid = false;
+    }
+    
+    // Validate professional background if selected
+    const professionalRadio = this.form.querySelector('input[name="who_i_am"][value="professional"]') as HTMLInputElement;
+    if (professionalRadio && professionalRadio.checked) {
+      const professionalSelect = this.form.querySelector('select[name="professional_type"]') as HTMLSelectElement;
+      
+      if (!professionalSelect.value) {
+        alert('Please select your professional background.');
+        isValid = false;
+      } else if (professionalSelect.value === 'other-professional') {
+        const otherInput = this.form.querySelector('input[name="professional_other"]') as HTMLInputElement;
+        if (!otherInput.value.trim()) {
+          alert('Please specify your professional background.');
+          otherInput.focus();
+          isValid = false;
+        }
+      }
+    }
+    
+    // Validate required contact emails checkbox
+    const contactEmailsCheckbox = this.form.querySelector('input[name="contact_emails"]') as HTMLInputElement;
+    if (!contactEmailsCheckbox.checked) {
+      alert('You must agree to receive contact emails to submit this form.');
+      contactEmailsCheckbox.focus();
+      isValid = false;
+    }
 
     return isValid;
   }

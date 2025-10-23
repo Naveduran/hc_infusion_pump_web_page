@@ -14,7 +14,7 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1 class="heading-1">Join Our Research Team</h1>
+                <h1 class="heading-1">Join Our Team</h1>
                 <p style="font-size: 1.2rem; color: #374151;">
                     Help us develop life-saving hydrocortisone pump technology
                 </p>
@@ -44,54 +44,34 @@
                         </div>
                         
                         <div>
-                            <label for="profession" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Professional Background *</label>
-                            <select id="profession" name="profession" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px;">
-                                <option value="">Select your background</option>
-                                <option value="electronic-engineer">Electronic Engineer</option>
-                                <option value="biomedical-engineer">Biomedical Engineer</option>
-                                <option value="pharmacist">Pharmacist</option>
-                                <option value="endocrinologist">Endocrinologist</option>
-                                <option value="internist">Internal Medicine Physician</option>
-                                <option value="researcher">Research Specialist</option>
-                                <option value="patient">Patient with Adrenal Insufficiency</option>
-                                <option value="caregiver">Family Member/Caregiver</option>
-                                <option value="software-developer">Software Developer</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label for="experience" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Relevant Experience</label>
-                            <textarea id="experience" name="experience" rows="4" maxlength="1000" placeholder="Describe your relevant experience, qualifications, or interest in this project..." style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px; resize: vertical;"></textarea>
-                        </div>
-                        
-                        <div>
-                            <label for="contribution" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">How would you like to contribute? *</label>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Who I am *</label>
                             <div style="display: grid; gap: 0.5rem;">
-                                <label style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <input type="checkbox" name="contribution" value="technical-development">
-                                    Technical development and design
+                                <label style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                    <input type="radio" name="who_i_am" value="patient" required>
+                                    <span>I am a patient and I want to be formally invited to participate in the research to test the device.</span>
                                 </label>
-                                <label style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <input type="checkbox" name="contribution" value="clinical-guidance">
-                                    Clinical guidance and protocols
+                                <label style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                    <input type="radio" name="who_i_am" value="research">
+                                    <span>I can help with research and literature analysis</span>
                                 </label>
-                                <label style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <input type="checkbox" name="contribution" value="research-analysis">
-                                    Research and literature analysis
+                                <label style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                    <input type="radio" name="who_i_am" value="funding">
+                                    <span>I know about funding or grant opportunities</span>
                                 </label>
-                                <label style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <input type="checkbox" name="contribution" value="patient-testing">
-                                    Patient testing and feedback
+                                <label style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                    <input type="radio" name="who_i_am" value="professional" id="professional-option">
+                                    <span>I want to help the research with my professional background</span>
                                 </label>
-                                <label style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <input type="checkbox" name="contribution" value="networking">
-                                    Connecting us with other specialists
-                                </label>
-                                <label style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <input type="checkbox" name="contribution" value="funding">
-                                    Funding or grant opportunities
-                                </label>
+                            </div>
+                            
+                            <div id="professional-background" style="display: none; margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <select name="professional_type" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px; margin-bottom: 0.5rem;">
+                                    <option value="">Select your professional background</option>
+                                    <option value="engineer">Electronic, Biomedical Engineer or similar</option>
+                                    <option value="physician">Endocrinologist, Internal Medicine Physician or similar</option>
+                                    <option value="other-professional">Other</option>
+                                </select>
+                                <input type="text" name="professional_other" placeholder="Please specify your professional background..." maxlength="200" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px; display: none;" id="professional-other-input">
                             </div>
                         </div>
                         
@@ -114,11 +94,22 @@
                         
                         <div>
                             <label for="additional-info" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Additional Information</label>
-                            <textarea id="additional-info" name="additional-info" rows="3" maxlength="500" placeholder="Any additional information you'd like to share..." style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px; resize: vertical;"></textarea>
+                            <textarea id="additional-info" name="additional-info" rows="3" maxlength="500" placeholder="LinkedIn profile, website, social media, portfolio, or any other relevant information..." style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 5px; resize: vertical;"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 500; margin-bottom: 0.5rem;">
+                                <input type="checkbox" name="contact_emails" value="yes" required id="contact-emails">
+                                I want to receive contact emails. (Required)
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                                <input type="checkbox" name="topic_updates" value="yes">
+                                I want to receive topic updates. (Optional)
+                            </label>
                         </div>
                         
                         <div style="font-size: 0.9rem; color: #6b7280; margin-top: 1rem;">
-                            <p><strong>Privacy Notice:</strong> Your information will be sent directly to nverad@unal.edu.co and used solely for collaboration purposes. We do not store or share your data with third parties.</p>
+                            <p><strong>Privacy Notice:</strong> Your information will be used solely for collaboration purposes. We do not store or share your data with third parties.</p>
                         </div>
                         
                         <div style="margin-top: 1rem;">
@@ -154,5 +145,27 @@
     <!-- /FOOTER_PLACEHOLDER -->
 
     <script src="assets/js/main.js"></script>
+    <script>
+        // Handle professional background option
+        document.getElementById('professional-option').addEventListener('change', function() {
+            const professionalDiv = document.getElementById('professional-background');
+            professionalDiv.style.display = this.checked ? 'block' : 'none';
+        });
+        
+        // Handle other radio options
+        document.querySelectorAll('input[name="who_i_am"]:not(#professional-option)').forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    document.getElementById('professional-background').style.display = 'none';
+                }
+            });
+        });
+        
+        // Handle professional type selection
+        document.querySelector('select[name="professional_type"]').addEventListener('change', function() {
+            const otherInput = document.getElementById('professional-other-input');
+            otherInput.style.display = this.value === 'other-professional' ? 'block' : 'none';
+        });
+    </script>
 </body>
 </html>
