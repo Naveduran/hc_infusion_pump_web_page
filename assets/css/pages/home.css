@@ -1,20 +1,11 @@
+/* Hero component - use hero.css for base styles */
 .hero {
-  text-align: center;
-  padding: var(--space-12) 0;
-  background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-200) 100%);
-  margin-top: 80px;
+  margin-top: var(--header-height);
 }
 
 .hero__description {
   margin-top: var(--space-6);
   margin-bottom: var(--space-8);
-}
-
-.hero__actions {
-  display: flex;
-  gap: var(--space-4);
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
 .problem-title {
@@ -116,6 +107,7 @@
   margin-bottom: var(--space-8);
 }
 
+/* Use btn-group component */
 .cta__actions {
   display: flex;
   gap: var(--space-4);
@@ -172,16 +164,16 @@
 }
 
 .timeline__hour--crash {
-  background: #dbeafe;
+  background: var(--info-light);
 }
 
 .timeline__hour--spike {
-  background: #fee2e2;
+  background: var(--danger-light);
 }
 
 .timeline__label {
   font-weight: bold;
-  min-width: 60px;
+  min-width: var(--timeline-label-width);
 }
 
 .key-insight {
@@ -195,7 +187,7 @@
 }
 
 .solution-hero {
-  background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 100%);
+  background: linear-gradient(135deg, var(--warning-light) 0%, var(--warning-medium) 100%);
   padding: var(--space-12);
   border-radius: var(--border-radius-lg);
   text-align: center;
@@ -221,7 +213,7 @@
 }
 
 .comparison-table td:nth-child(3) {
-  background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 100%);
+  background: linear-gradient(135deg, var(--warning-light) 0%, var(--warning-medium) 100%);
   font-weight: 500;
 }
 
@@ -254,8 +246,8 @@
 .step__number {
   background: var(--primary-orange);
   color: white;
-  width: 40px;
-  height: 40px;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -288,6 +280,7 @@
   text-decoration: underline;
 }
 
+/* Use btn-group component */
 .solution-hero__actions {
   display: flex;
   gap: var(--space-4);
@@ -345,13 +338,19 @@
     order: 3;
   }
   
-  .cta__actions {
+  .cta__actions,
+  .hero__actions,
+  .solution-hero__actions {
     flex-direction: column;
     align-items: center;
   }
   
-  .hero__actions {
-    flex-direction: column;
-    align-items: center;
+  .cta__actions .btn,
+  .hero__actions .btn,
+  .solution-hero__actions .btn {
+    width: 100%;
+    max-width: 280px;
   }
 }
+
+/* Utility classes moved to utilities.css */

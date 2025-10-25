@@ -1,15 +1,20 @@
+/* Button component with BEM naming */
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: var(--space-3) var(--space-6);
+  border: none;
   border-radius: var(--border-radius);
-  display: inline-block;
-  font-weight: 500;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  line-height: 1.5;
   text-align: center;
-  transition: opacity 0.2s;
   cursor: pointer;
-}
-
-.btn:hover {
-  opacity: 0.9;
+  transition: all var(--transition-fast) ease;
+  min-height: 44px;
+  gap: var(--space-2);
 }
 
 .btn:focus {
@@ -17,17 +22,85 @@
   outline-offset: 2px;
 }
 
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Button variants */
 .btn--primary {
   background: var(--primary-orange);
   color: white;
 }
 
+.btn--primary:hover:not(:disabled) {
+  background: var(--primary-orange-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
 .btn--secondary {
-  background: var(--secondary-yellow);
+  background: transparent;
+  color: var(--primary-orange);
+  border: 2px solid var(--primary-orange);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--primary-orange);
   color: white;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--tertiary {
+  background: transparent;
+  color: var(--primary-blue);
+  border: 1px solid var(--gray-300);
+}
+
+.btn--tertiary:hover:not(:disabled) {
+  background: var(--gray-50);
+  border-color: var(--primary-blue);
+}
+
+/* Button sizes */
+.btn--small {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+  min-height: 36px;
 }
 
 .btn--large {
   padding: var(--space-4) var(--space-8);
   font-size: var(--font-size-lg);
+  min-height: 52px;
+}
+
+/* Button groups */
+.btn-group {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-group--left {
+  justify-content: flex-start;
+}
+
+.btn-group--right {
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-group .btn {
+    width: 100%;
+    max-width: 280px;
+  }
 }

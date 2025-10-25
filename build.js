@@ -1,14 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import { execSync } from 'child_process';
 
-// Compile TypeScript first
-try {
-  console.log('Compiling TypeScript...');
-  execSync('tsc', { stdio: 'inherit' });
-} catch (error) {
-  console.log('TypeScript compilation failed, continuing with existing JS files...');
-}
+
 
 // Read templates
 const header = fs.readFileSync('_includes/header.html', 'utf8');
@@ -39,7 +32,7 @@ const copyDir = (src, dest) => {
 copyDir('assets', 'dist/assets');
 
 // Process HTML files
-const htmlFiles = ['index.html', 'bibliography.html', 'support.html', 'collaborate.html', 'team.html'];
+const htmlFiles = ['index.html', 'bibliography.html', 'support.html', 'donation.html', 'team.html'];
 
 htmlFiles.forEach(file => {
   if (fs.existsSync(file)) {

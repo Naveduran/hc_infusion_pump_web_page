@@ -1,0 +1,59 @@
+/* Page-specific styles */
+.hero__subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--gray-600);
+}
+
+.card--centered {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card--narrow {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section--light {
+  background: var(--gray-50);
+}
+
+.text--center-block {
+  text-align: center;
+  margin-top: var(--space-8);
+}
+
+/* Utility classes moved to utilities.css */
+
+/* Use btn-group component for share buttons */
+.share-buttons {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-4);
+}
+
+.action-button {
+  margin-top: var(--space-4);
+}
+
+.research-card {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.research-card__image {
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.research-card__content {
+  flex: 1;
+}
+
+.research-card__button {
+  margin-top: var(--space-4);
+}
+

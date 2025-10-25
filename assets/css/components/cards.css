@@ -1,3 +1,4 @@
+/* Card component with BEM naming */
 .card {
   background: white;
   padding: var(--space-6);
@@ -5,31 +6,45 @@
   box-shadow: var(--shadow);
 }
 
+/* Card variants */
 .card--benefit {
-  background: white;
-  padding: var(--space-6);
   border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow);
 }
 
 .card--damage {
-  padding: var(--space-6);
   border-radius: var(--border-radius-lg);
 }
 
 .card--damage-overdose {
-  background: linear-gradient(135deg, #fee2e2 0%, #fca5a5 100%);
+  background: linear-gradient(135deg, var(--danger-light) 0%, var(--danger-medium) 100%);
 }
 
 .card--damage-underdose {
-  background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
+  background: linear-gradient(135deg, var(--info-light) 0%, var(--info-medium) 100%);
 }
 
 .card--team {
   text-align: center;
 }
 
+.card--narrow {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Card elements */
 .card__image {
   border-radius: 50%;
   margin-bottom: var(--space-4);
+}
+
+.card__link {
+  color: var(--primary-blue);
+  text-decoration: underline;
+  transition: color var(--transition-fast);
+}
+
+.card__link:hover {
+  color: var(--primary-orange);
 }

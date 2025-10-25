@@ -45,6 +45,30 @@
   --container-max-width: 1200px;
   --border-radius: 8px;
   --border-radius-lg: 12px;
+  
+  /* Shadows */
   --shadow: 0 2px 10px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 4px 15px rgba(0,0,0,0.1);
+  
+  /* Transitions */
+  --transition-fast: 0.15s;
+  --transition-base: 0.2s;
+  --transition-slow: 0.3s;
+  
+  /* Additional colors */
+  --primary-orange-dark: #c2410c;
+  
+  /* State colors */
+  --danger-light: #fee2e2;
+  --danger-medium: #fca5a5;
+  --info-light: #dbeafe;
+  --info-medium: #93c5fd;
+  --warning-light: #fef3c7;
+  --warning-medium: #fbbf24;
+  
+  /* Layout constants */
+  --header-height: 80px;
+  --avatar-size: 40px;
+  --timeline-label-width: 60px;
 }
