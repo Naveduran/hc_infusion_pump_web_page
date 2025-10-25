@@ -57,3 +57,18 @@
   margin-top: var(--space-4);
 }
 
+.roles-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.role-tag {
+  background: var(--gray-100);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  border: 1px solid var(--gray-300);
+}
+

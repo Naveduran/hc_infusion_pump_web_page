@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; img-src 'self' data: https:; frame-src 'none'; object-src 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; img-src 'self' data: https:; frame-src 'none'; object-src 'none'; form-action 'self' https://www.paypal.com;">
     <title>Our Team - OpenCortisol Project</title>
     <meta name="description" content="Meet the team behind the OpenCortisol Project - dedicated researchers and developers working on open-source hydrocortisone pump technology.">
     
@@ -62,7 +62,9 @@
                 </p>
                 <div class="text-center cta__actions">
                     <a href="https://form.typeform.com/to/kP17kq30" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Get Involved</a>
-                    <a href="donation.html" class="btn btn--secondary">Support Our Work</a>
+                    <form action="https://www.paypal.com/ncp/payment/B8RZJREEHVCNL" method="post" target="_blank" style="display:inline;">
+                        <input type="submit" value="Support Our Work" class="btn btn--secondary" />
+                    </form>
                 </div>
             </div>
         </section>

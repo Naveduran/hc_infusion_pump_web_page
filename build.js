@@ -32,7 +32,7 @@ const copyDir = (src, dest) => {
 copyDir('assets', 'dist/assets');
 
 // Process HTML files
-const htmlFiles = ['index.html', 'bibliography.html', 'support.html', 'donation.html', 'team.html'];
+const htmlFiles = ['index.html', 'bibliography.html', 'support.html', 'team.html'];
 
 htmlFiles.forEach(file => {
   if (fs.existsSync(file)) {
