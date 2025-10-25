@@ -3,6 +3,13 @@ name: Build and Deploy
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE'
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 permissions:
   contents: read
@@ -24,17 +31,20 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
+        cache: 'npm'
+      timeout-minutes: 5
         
-
     - name: Verify files exist
+      timeout-minutes: 2
       run: |
-        ls -la
-        ls -la _includes/
+        test -d _includes || { echo "Template directory not found"; exit 1; }
+        test -f build.js || { echo "Build script not found"; exit 1; }
         
     - name: Build templates
       run: |
-        node build.js
-        ls -la dist/
+        node build.js || { echo "Build failed"; exit 1; }
+        test -d dist || { echo "Dist directory not found"; exit 1; }
+        test -f dist/index.html || { echo "Build output incomplete"; exit 1; }
         
     - name: Setup Pages
       uses: actions/configure-pages@v4
@@ -43,7 +53,8 @@ jobs:
       uses: actions/upload-pages-artifact@v3
       with:
         path: ./dist
-        
+      
+    # Deploy the built site to GitHub Pages
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
