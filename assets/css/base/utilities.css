@@ -14,7 +14,8 @@
 }
 
 .text--highlight {
-  margin-top: var(--space-8);
+  margin-top: var(--space-12);
+  margin-bottom: 0;
   color: var(--primary-orange);
 }
 

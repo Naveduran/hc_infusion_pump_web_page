@@ -15,9 +15,32 @@
   text-align: center;
 }
 
-.section--light {
-  background: var(--gray-50);
+.card p {
+  text-align: center;
+  padding: 0 var(--space-3);
 }
+
+.card:last-child p {
+  padding: 0;
+}
+
+.card:last-child p:first-of-type {
+  padding-top: var(--space-4);
+}
+
+.card:last-child p:last-of-type {
+  padding-bottom: var(--space-4);
+}
+
+.card:nth-child(2) p {
+  padding: var(--space-3);
+}
+
+.card:first-child p {
+  padding: var(--space-3);
+}
+
+/* Section styles moved to layout/grid.css */
 
 .text--center-block {
   text-align: center;
@@ -29,9 +52,17 @@
 /* Use btn-group component for share buttons */
 .share-buttons {
   display: flex;
-  gap: var(--space-3);
+  gap: var(--space-2);
   flex-wrap: wrap;
   margin-top: var(--space-4);
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .share-buttons {
+    gap: var(--space-3);
+    justify-content: flex-start;
+  }
 }
 
 .action-button {
@@ -62,6 +93,7 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   margin: 1rem 0;
+  justify-content: center;
 }
 
 .role-tag {

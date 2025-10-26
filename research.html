@@ -14,8 +14,47 @@
     <link rel="preload" href="assets/css/main.css" as="style">
 
     <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .expandable {
+            margin: var(--space-4) 0;
+        }
+        .expandable__trigger {
+            background: var(--gray-100);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            padding: var(--space-3);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+        .expandable__trigger:hover {
+            background: var(--gray-200);
+        }
+        .expandable__content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-top: none;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+        .expandable__content.expanded {
+            max-height: 500px;
+            padding: var(--space-4);
+        }
+        .expandable__icon {
+            transition: transform 0.3s ease;
+        }
+        .expandable__icon.rotated {
+            transform: rotate(180deg);
+        }
+    </style>
 </head>
 <body>
+
     <!-- HEADER_PLACEHOLDER -->
     <!-- /HEADER_PLACEHOLDER -->
 
@@ -27,48 +66,19 @@
                 <p class="text-large hero__description">
                     From patient struggle to scientific discovery - the story behind our mission
                 </p>
-                <div class="reading-time">
-                    <svg class="reading-time__icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    <span class="reading-time__text">5 min read</span>
-                </div>
+
             </div>
         </header>
-
-        <!-- Progress Timeline -->
-        <div class="progress-timeline">
-            <div class="container">
-                <div class="progress-timeline__track">
-                    <div class="progress-timeline__step progress-timeline__step--active">
-                        <div class="progress-timeline__marker">1</div>
-                        <span class="progress-timeline__label">Struggle</span>
-                    </div>
-                    <div class="progress-timeline__step">
-                        <div class="progress-timeline__marker">2</div>
-                        <span class="progress-timeline__label">Discovery</span>
-                    </div>
-                    <div class="progress-timeline__step">
-                        <div class="progress-timeline__marker">3</div>
-                        <span class="progress-timeline__label">Innovation</span>
-                    </div>
-                    <div class="progress-timeline__step">
-                        <div class="progress-timeline__marker">4</div>
-                        <span class="progress-timeline__label">Hope</span>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Introduction Section -->
         <section class="section" aria-labelledby="introduction-heading">
             <div class="container">
-                <h2 id="introduction-heading" class="heading-2 text-center">First Light of Faith</h2>
+                <h2 id="introduction-heading" class="heading-2">First Light of Faith</h2>
                 
                 <article class="research-story">
-                    <div class="research-story__quote">
-                        <p class="text-large">
-                            "The "optimal" treatment wasn't working for me.
+                    <div class="pull-quote">
+                        <p class="pull-quote__text">
+                            The "optimal" treatment wasn't working for me.
                         </p>
                     </div>
                     
@@ -107,51 +117,52 @@
         <!-- Discovery Section -->
         <section class="section section--light" aria-labelledby="discovery-heading">
             <div class="container">
-                <h2 id="discovery-heading" class="heading-2 text-center">The Discovery</h2>
+                <h2 id="discovery-heading" class="heading-2">The Discovery</h2>
                 
                 <article class="research-story">
-                    <div class="research-story__content">
-                        <p>
-                            Feeling inspired, I searched for commercial pump prices and found them extremely expensive and definitely not available in my country. But I never give up.
-                        </p>
-                        
-                        <p>
-                            Then I found my lifeline:
-                        </p>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div>
+                            <h4>The Search</h4>
+                            <p>Feeling inspired, I searched for commercial pump prices... $3,000. $4,500. $6,500. My heart sank. Not only were they extremely expensive, they definitely weren't available in my country.</p>
+                        </div>
                     </div>
-                    
-                    <article class="research-highlight">
-                        <h3 class="heading-3">Researchers Develop $89 Insulin infusion Pump, Challenging High Costs</h3>
-                        <div class="research-highlight__content">
-                            <p>
-                                In a move that could revolutionize diabetes care accessibility, researchers have designed a fully functional, ultra-low-cost insulin pump. With material costs of just $89, this open-source prototype presents a stark contrast to commercial pumps that cost between USD 3,000 to USD 6,500 and are subject to many access restrictions.
-                            </p>
-                            
-                            <p>
-                                Critically, the team didn't just build it—they rigorously tested it. When compared to an in-warranty commercial model using identical methodology, the low-cost pump demonstrated similar performance and accuracy. By making the design and code freely available online, the project aims to empower innovation and broaden access to this essential medical technology.
-                            </p>
-                            
-                            <p class="text-bold">
-                                Ready to explore further?
-                            </p>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div>
+                            <h4>The Discovery</h4>
+                            <p>But I never give up. Then I found it: A research paper about an $89 insulin pump that worked just as well as the expensive ones. The researchers had made everything open-source - the designs, the code, everything.</p>
                         </div>
-                        
-                        <div class="research-highlight__actions">
-                            <button class="btn btn--primary" data-action="external-redirect" data-url="https://www.sciencedirect.com/science/article/pii/S2468067222001201/pdfft?md5=4099c7296005d21fb545a7f1905b17c4&pid=1-s2.0-S2468067222001201-main.pdf">
-                                <svg class="btn__icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                                </svg>
-                                Download the Research Paper for the complete technical details and test results
-                            </button>
-                            
-                            <button class="btn btn--secondary" data-action="external-redirect" data-url="https://data.mendeley.com/datasets/xb4tykn5gd/1">
-                                <svg class="btn__icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                                </svg>
-                                Access the Prototype Design & Code to see the open-source blueprints for yourself
-                            </button>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div>
+                            <h4>The Inspiration</h4>
+                            <p>In that moment, I realized we could do the same thing for hydrocortisone. We could build hope from science.</p>
                         </div>
-                    </article>
+                    </div>
+                    <div class="expandable">
+                        <div class="expandable__trigger" onclick="toggleExpandable(this)">
+                            <span><strong>Technical Details:</strong> How the $89 pump works</span>
+                            <svg class="expandable__icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </div>
+                        <div class="expandable__content">
+                            <p><strong>Materials:</strong> 3D-printed housing, Arduino microcontroller, stepper motor, medical-grade tubing</p>
+                            <p><strong>Performance:</strong> ±5% accuracy in insulin delivery, 72-hour battery life, programmable basal rates</p>
+                            <p><strong>Safety:</strong> Occlusion detection, low battery alerts, fail-safe mechanisms</p>
+                            <p><strong>Cost Breakdown:</strong> Electronics ($45), 3D printing materials ($12), tubing and connectors ($18), assembly ($14)</p>
+                        </div>
+                    </div>
+                    <div class="research-story__action--centered">
+                        <button class="btn btn--primary" data-action="external-redirect" data-url="https://www.sciencedirect.com/science/article/pii/S2468067222001201/pdfft?md5=4099c7296005d21fb545a7f1905b17c4&pid=1-s2.0-S2468067222001201-main.pdf">
+                            <svg class="btn__icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            Read the Research Paper
+                        </button>
+                    </div>
                 </article>
             </div>
         </section>
@@ -159,7 +170,7 @@
         <!-- Innovation Section -->
         <section class="section" aria-labelledby="innovation-heading">
             <div class="container">
-                <h2 id="innovation-heading" class="heading-2 text-center">The Innovation</h2>
+                <h2 id="innovation-heading" class="heading-2">The Innovation</h2>
                 
                 <article class="research-story">
                     <div class="research-story__icon">
@@ -168,11 +179,11 @@
                         </svg>
                     </div>
                     
-                    <div class="research-story__quote research-story__quote--centered">
-                        <p class="text-large text-bold">
+                    <div class="pull-quote">
+                        <p class="pull-quote__text">
                             We could combine the research on hydrocortisone pulsatile rhythms with low-cost open-source 3D-printable devices.
                         </p>
-                        <p class="text-large text-bold">
+                        <p class="pull-quote__text">
                             We could create a low-cost open-source 3D-printable hydrocortisone pump.
                         </p>
                     </div>
@@ -183,7 +194,7 @@
         <!-- Hope Section -->
         <section class="section section--light" aria-labelledby="hope-heading">
             <div class="container">
-                <h2 id="hope-heading" class="heading-2 text-center">Renewed Hope</h2>
+                <h2 id="hope-heading" class="heading-2">Renewed Hope</h2>
                 
                 <article class="research-story">
                     <div class="research-story__content">
@@ -191,7 +202,7 @@
                             This gave me a renewed sense of hope. I hope that using the pump will restore physiological natural cortisol rhythms, remove the brain fog and fatigue, so I can reconnect with the vibrant person I love being.
                         </p>
                         
-                        <div class="pull-quote pull-quote--hope">
+                        <div class="pull-quote">
                             <p class="pull-quote__text">
                                 I want to get back to making a difference through meaningful work, and earn a living to support my family.
                             </p>
@@ -219,5 +230,16 @@
     <!-- /FOOTER_PLACEHOLDER -->
 
     <script src="assets/js/buttons.js"></script>
+    <script>
+        
+        // Expandable sections
+        function toggleExpandable(trigger) {
+            const content = trigger.nextElementSibling;
+            const icon = trigger.querySelector('.expandable__icon');
+            
+            content.classList.toggle('expanded');
+            icon.classList.toggle('rotated');
+        }
+    </script>
 </body>
 </html>

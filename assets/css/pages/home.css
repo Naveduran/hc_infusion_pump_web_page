@@ -3,6 +3,12 @@
   margin-top: var(--header-height);
 }
 
+/* Landing page specific hero description */
+.hero .hero__description {
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
 .hero__description {
   margin-top: var(--space-6);
   margin-bottom: var(--space-8);
@@ -150,9 +156,9 @@
 
 .timeline {
   background: var(--gray-50);
-  padding: var(--space-8);
+  padding: var(--space-4);
   border-radius: var(--border-radius-lg);
-  margin: var(--space-8) 0;
+  margin: 0;
 }
 
 .timeline__hour {
@@ -183,7 +189,6 @@
   border-radius: var(--border-radius);
   text-align: center;
   font-weight: bold;
-  margin: var(--space-4) 0;
 }
 
 .solution-hero {

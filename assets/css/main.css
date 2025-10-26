@@ -13,6 +13,7 @@
 @import 'components/buttons.css';
 @import 'components/cards.css';
 @import 'components/hero.css';
+@import 'components/spacing.css';
 
 /* Pages */
 @import 'pages/home.css';
