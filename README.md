@@ -22,6 +22,7 @@ Open-source hydrocortisone pump technology website built with modular BEM CSS an
    - Edit HTML files (they use template placeholders)
    - Edit `_includes/header.html` or `_includes/footer.html` for navigation changes
    - Edit CSS in `assets/css/` directory
+
    - Run `node build.js` again to rebuild
 
 ## File Structure

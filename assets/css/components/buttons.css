@@ -29,6 +29,64 @@
   transform: none;
 }
 
+/* Icon styles */
+.btn__icon {
+  width: 16px;
+  height: 16px;
+  margin-right: var(--space-2);
+  flex-shrink: 0;
+}
+
+.btn--small .btn__icon {
+  width: 14px;
+  height: 14px;
+}
+
+.btn--large .btn__icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Loading states */
+.btn--loading {
+  position: relative;
+  pointer-events: none;
+  color: transparent;
+}
+
+.btn--loading .btn__icon {
+  opacity: 0;
+}
+
+.btn--loading::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.btn--success {
+  background: var(--success-green, #10b981) !important;
+  color: white !important;
+}
+
+.btn--error {
+  background: var(--error-red, #ef4444) !important;
+  color: white !important;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /* Button variants */
 .btn--primary {
   background: var(--primary-orange);
