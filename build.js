@@ -49,7 +49,13 @@ try {
 }
 
 // Process HTML files
-const htmlFiles = ['index.html', 'bibliography.html', 'support.html', 'team.html'];
+const htmlFiles = [
+  'index.html',
+  'support.html',
+  'team.html',
+  'research.html',
+  'sources.html',
+];
 
 htmlFiles.forEach(file => {
   if (fs.existsSync(file)) {
@@ -71,8 +77,3 @@ htmlFiles.forEach(file => {
 });
 
 console.log('Build completed successfully!');
-
-// Handle ES module execution
-if (import.meta.url === `file://${process.argv[1]}`) {
-  // This file was run directly
-}
