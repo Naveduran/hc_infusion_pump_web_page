@@ -2,13 +2,13 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, test ]
     paths-ignore:
       - '**.md'
       - 'LICENSE'
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref_name }}
   cancel-in-progress: false
 
 permissions:
@@ -31,7 +31,6 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
       timeout-minutes: 5
         
     - name: Verify files exist
@@ -46,15 +45,26 @@ jobs:
         test -d dist || { echo "Dist directory not found"; exit 1; }
         test -f dist/index.html || { echo "Build output incomplete"; exit 1; }
         
-    - name: Setup Pages
+    - name: Setup Pages (Main Branch)
+      if: github.ref_name == 'main'
       uses: actions/configure-pages@v4
       
-    - name: Upload artifact
+    - name: Upload artifact (Main Branch)
+      if: github.ref_name == 'main'
       uses: actions/upload-pages-artifact@v3
       with:
         path: ./dist
       
-    # Deploy the built site to GitHub Pages
-    - name: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages (Main Branch)
+      if: github.ref_name == 'main'
       id: deployment
       uses: actions/deploy-pages@v4
+      
+    - name: Deploy to GitHub Pages (Test Branch)
+      if: github.ref_name == 'test'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+        publish_branch: gh-pages-test
+        force_orphan: true

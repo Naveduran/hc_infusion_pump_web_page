@@ -55,6 +55,7 @@ const htmlFiles = [
   'team.html',
   'research.html',
   'sources.html',
+  'coming_soon.html',
 ];
 
 htmlFiles.forEach(file => {
