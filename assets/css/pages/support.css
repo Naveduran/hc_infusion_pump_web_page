@@ -61,12 +61,13 @@
 @media (min-width: 768px) {
   .share-buttons {
     gap: var(--space-3);
-    justify-content: flex-start;
+    justify-content: center;
   }
 }
 
 .action-button {
   margin-top: var(--space-4);
+  justify-self: center;
 }
 
 .research-card {
