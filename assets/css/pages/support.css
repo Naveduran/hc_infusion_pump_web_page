@@ -89,6 +89,20 @@
   margin-top: var(--space-4);
 }
 
+.card--compact {
+  max-width: 700px;
+  margin: 0;
+  text-align: left;
+}
+
+.research-card--no-image {
+  display: block;
+}
+
+.research-card--no-image .research-card__content {
+  margin: 0;
+}
+
 .roles-list {
   display: flex;
   flex-wrap: wrap;
