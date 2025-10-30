@@ -1,1 +1,11 @@
 /* Team page uses card__link from cards.css */
+
+/* Constrain team avatar images to at most 300x300 while preserving aspect ratio */
+.card__image {
+	max-width: 300px;
+	max-height: 300px;
+	width: auto;
+	height: auto;
+	display: block;
+	margin: 0.5rem auto;
+}
