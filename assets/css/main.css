@@ -14,9 +14,10 @@
 @import 'components/cards.css';
 @import 'components/hero.css';
 @import 'components/spacing.css';
+@import 'components/research-cards.css';
 
 /* Pages */
 @import 'pages/home.css';
 @import 'pages/support.css';
 @import 'pages/team.css';
-@import 'pages/research.css';
+@import 'pages/sources.css';

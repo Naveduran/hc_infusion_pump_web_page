@@ -103,6 +103,50 @@
   margin: 0;
 }
 
+.collapsible-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.collapsible-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.collapsible-content {
+  padding: var(--space-4) 0;
+}
+
+.research-item {
+  margin-bottom: var(--space-4);
+  padding: var(--space-3);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+}
+
+.research-title {
+  cursor: pointer;
+  margin: 0;
+  padding: var(--space-2) 0;
+  color: var(--primary-blue);
+  font-size: 1.25rem;
+}
+
+.research-title:hover {
+  color: var(--primary-orange);
+}
+
+.research-details {
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--gray-100);
+  margin-top: var(--space-3);
+}
+
 .roles-list {
   display: flex;
   flex-wrap: wrap;

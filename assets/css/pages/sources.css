@@ -42,6 +42,11 @@ h4 {
   padding: var(--space-8) 0;
 }
 
+/* Reduced spacing for sources page */
+.sources-page .section {
+  padding: var(--space-2) 0;
+}
+
 @media (min-width: 768px) {
   .research-story {
     max-width: 800px;
@@ -94,7 +99,7 @@ h4 {
   margin: var(--space-8) 0;
 }
 
-.innovation-icon {
+.research-story__innovation-icon {
   width: 64px;
   height: 64px;
   color: var(--primary-orange);
@@ -321,7 +326,7 @@ h4 {
   transform: translateX(4px);
 }
 
-.timeline-marker {
+.timeline-item__marker {
   width: 20px;
   height: 20px;
   background: var(--primary-orange);
@@ -331,7 +336,7 @@ h4 {
   transition: all 0.3s ease;
 }
 
-.timeline-item:hover .timeline-marker {
+.timeline-item:hover .timeline-item__marker {
   transform: scale(1.2);
   box-shadow: 0 4px 12px rgba(255, 138, 76, 0.3);
 }
