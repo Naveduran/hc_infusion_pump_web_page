@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
   if (copyButton) {
     copyButton.addEventListener('click', async function() {
       const url = this.dataset.url;
+      if (!url) {
+        console.error('No URL provided for copy action');
+        return;
+      }
       
       this.classList.add('btn--loading');
       this.setAttribute('aria-busy', 'true');
@@ -35,12 +39,20 @@ document.addEventListener('DOMContentLoaded', function() {
   externalButtons.forEach(button => {
     button.addEventListener('click', function() {
       const url = this.dataset.url;
+      if (!url) {
+        console.error('No URL provided for external redirect');
+        return;
+      }
       
       this.classList.add('btn--loading');
       this.setAttribute('aria-busy', 'true');
       
       // Open external link
-      window.open(url, '_blank', 'noopener,noreferrer');
+      try {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      } catch (error) {
+        console.error('Failed to open external link:', error);
+      }
       
       // Reset button after short delay
       setTimeout(() => {
