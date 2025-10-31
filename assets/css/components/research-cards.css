@@ -66,6 +66,7 @@
   opacity: 0;
   transition: opacity var(--transition-slow) ease;
   justify-content: flex-end;
+  flex-direction: row;
 }
 
 .research-card.expanded .research-card__abstract,
@@ -133,18 +134,23 @@
 }
 
 /* Topic content */
-.topic-content {
+.sources-page .topic-section .topic-content {
   display: none;
   opacity: 0;
   transition: opacity var(--transition-slow) ease;
 }
 
-.topic-section.expanded .topic-content {
+.sources-page .topic-section.expanded .topic-content {
   display: block;
   opacity: 1;
 }
 
 /* Button overrides for research cards */
+.research-card .btn {
+  width: auto;
+  margin-bottom: 0;
+}
+
 .research-card .btn--tertiary {
   background: transparent;
   color: var(--primary-blue);
