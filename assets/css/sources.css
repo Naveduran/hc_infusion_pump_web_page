@@ -7,14 +7,14 @@
 
 /* Sources Topic */
 .sources-topic {
-  margin-bottom: var(--space-6);
+  margin-bottom: 0;
 }
 
 .sources-topic__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--space-4);
+  margin-bottom: 0;
   cursor: pointer;
   padding: var(--space-3);
   border-radius: var(--border-radius);
