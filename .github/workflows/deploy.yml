@@ -31,19 +31,26 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
+        cache: 'npm'
       timeout-minutes: 5
+        
+    - name: Install dependencies
+      run: npm ci
+      timeout-minutes: 3
         
     - name: Verify files exist
       timeout-minutes: 2
       run: |
         test -d _includes || { echo "Template directory not found"; exit 1; }
         test -f build.js || { echo "Build script not found"; exit 1; }
+        test -d assets/js || { echo "TypeScript source directory not found"; exit 1; }
         
-    - name: Build templates
+    - name: Build site
       run: |
-        node build.js || { echo "Build failed"; exit 1; }
+        npm run build || { echo "Build failed"; exit 1; }
         test -d dist || { echo "Dist directory not found"; exit 1; }
         test -f dist/index.html || { echo "Build output incomplete"; exit 1; }
+        test -d dist/assets/js || { echo "JavaScript files not compiled"; exit 1; }
         
     - name: Setup Pages (Main Branch)
       if: github.ref_name == 'main'

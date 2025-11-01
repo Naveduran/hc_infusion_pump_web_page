@@ -1,0 +1,11 @@
+{
+  "name": "hc-infusion-pump-web-page",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "npm run build && python -m http.server 8000 -d dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

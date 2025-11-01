@@ -5,25 +5,44 @@ Open-source hydrocortisone pump technology website built with modular BEM CSS an
 ## Local Development
 
 ### Prerequisites
-- Node.js
+- Node.js (v16 or higher)
+- Git
+
+### Initial Setup
+
+1. **Clone and configure:**
+   ```bash
+   git clone <repository-url>
+   cd hc_infusion_pump_web_page
+   
+   # Configure Git for cross-platform compatibility
+   git config core.autocrlf false
+   git config core.eol lf
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
 ### Build and Test Locally
 
 1. **Build the site:**
    ```bash
-   node build.js
+   npm run build
    ```
 
 2. **View the website:**
    - Open `dist/index.html` in your browser
-   - Or serve the `dist/` folder with any local server
+   - Or run `npm run dev` to build and serve locally
 
 3. **Make changes:**
    - Edit HTML files (they use template placeholders)
    - Edit `_includes/header.html` or `_includes/footer.html` for navigation changes
    - Edit CSS in `assets/css/` directory
+   - Edit TypeScript in `assets/js/` directory
 
-   - Run `node build.js` again to rebuild
+   - Run `npm run build` again to rebuild
 
 ## File Structure
 
@@ -31,10 +50,14 @@ Open-source hydrocortisone pump technology website built with modular BEM CSS an
 ├── _includes/           # Template fragments
 │   ├── header.html     # Navigation header
 │   └── footer.html     # Site footer
-├── assets/css/         # Modular BEM CSS
-├── dist/              # Built files (created by build.js)
+├── assets/
+│   ├── css/            # Modular BEM CSS
+│   └── js/             # TypeScript source files
+├── dist/              # Built files (auto-generated)
 ├── *.html             # Source HTML files with placeholders
-└── build.js           # Build script
+├── build.js           # Build script
+├── package.json       # Dependencies
+└── tsconfig.json      # TypeScript config
 ```
 
 ## Deployment
@@ -59,6 +82,24 @@ git push -u origin test
 # Serve locally (optional)
 python -m http.server 8000 -d dist
 # Or: npx http-server dist
+```
+
+### Cross-Platform Notes
+
+**Windows Users:**
+- The repository is configured to handle line endings automatically
+- `desktop.ini` files are ignored by Git
+- No additional setup required
+
+**macOS/Linux Users:**
+- `.DS_Store` files are ignored by Git
+- No additional setup required
+
+**If you encounter OS file conflicts:**
+```bash
+# Clean up any tracked OS files
+git rm --cached **/desktop.ini 2>/dev/null || true
+git rm --cached **/.DS_Store 2>/dev/null || true
 ```
 
 ## CSS Architecture
