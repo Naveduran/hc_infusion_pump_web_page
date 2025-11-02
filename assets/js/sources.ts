@@ -1,55 +1,97 @@
-const SourcesPage = {
-  init(): void {
+/**
+ * Sources Page Manager
+ * Handles topic and article collapsible functionality
+ */
+
+import { SELECTORS, CSS_CLASSES, MESSAGES } from './constants.js';
+import { ErrorHandler } from './utils.js';
+
+class SourcesPageManager {
+  constructor() {
+    this.init();
+  }
+
+  private init(): void {
     try {
       this.bindTopicHeaders();
       this.bindArticleCards();
     } catch (error) {
-      console.error('Failed to initialize sources page:', error);
+      ErrorHandler.logError('SourcesPageManager.init', error);
     }
-  },
+  }
 
-  bindTopicHeaders(): void {
+  private bindTopicHeaders(): void {
     try {
-      const topicHeaders = document.querySelectorAll('.sources-topic__header');
+      const topicHeaders = document.querySelectorAll<HTMLElement>(SELECTORS.SOURCES_TOPIC_HEADER);
+      if (topicHeaders.length === 0) {
+        ErrorHandler.logWarning('SourcesPageManager.bindTopicHeaders', 'No topic headers found');
+        return;
+      }
+      
       topicHeaders.forEach(header => {
         header.addEventListener('click', this.handleTopicToggle.bind(this));
       });
     } catch (error) {
-      console.error('Failed to bind topic headers:', error);
+      ErrorHandler.logError('SourcesPageManager.bindTopicHeaders', error);
     }
-  },
+  }
 
-  bindArticleCards(): void {
+  private bindArticleCards(): void {
     try {
-      const articleCards = document.querySelectorAll('.sources-article');
+      const articleCards = document.querySelectorAll<HTMLElement>(SELECTORS.SOURCES_ARTICLE);
+      if (articleCards.length === 0) {
+        ErrorHandler.logWarning('SourcesPageManager.bindArticleCards', 'No article cards found');
+        return;
+      }
+      
       articleCards.forEach(card => {
         card.addEventListener('click', this.handleArticleToggle.bind(this));
       });
     } catch (error) {
-      console.error('Failed to bind article cards:', error);
-    }
-  },
-
-  handleTopicToggle(event: Event): void {
-    const header = event.currentTarget as HTMLElement;
-    const topic = header?.closest('.sources-topic');
-    if (topic) {
-      topic.classList.toggle('sources-topic--expanded');
-    }
-  },
-
-  handleArticleToggle(event: Event): void {
-    const target = event.target as HTMLElement;
-    if (target?.closest('.sources-article__actions')) {
-      return;
-    }
-    const article = event.currentTarget as HTMLElement;
-    if (article) {
-      article.classList.toggle('sources-article--expanded');
+      ErrorHandler.logError('SourcesPageManager.bindArticleCards', error);
     }
   }
-};
+
+  private handleTopicToggle(event: Event): void {
+    if (!event.currentTarget) {
+      ErrorHandler.logWarning('SourcesPageManager.handleTopicToggle', 'Event target is null');
+      return;
+    }
+    
+    const header = event.currentTarget as HTMLElement;
+    const topic = header.closest(SELECTORS.SOURCES_TOPIC);
+    
+    if (!topic || !topic.classList) {
+      ErrorHandler.logWarning('SourcesPageManager.handleTopicToggle', 'Topic element or classList missing');
+      return;
+    }
+    
+    topic.classList.toggle(CSS_CLASSES.SOURCES_TOPIC_EXPANDED);
+  }
+
+  private handleArticleToggle(event: Event): void {
+    if (!event.target || !event.currentTarget) {
+      ErrorHandler.logWarning('SourcesPageManager.handleArticleToggle', 'Event target is null');
+      return;
+    }
+    
+    const target = event.target as HTMLElement;
+    
+    // Don't toggle if clicking on action buttons
+    if (target.closest(SELECTORS.SOURCES_ARTICLE_ACTIONS)) {
+      return;
+    }
+    
+    const article = event.currentTarget as HTMLElement;
+    if (!article) {
+      ErrorHandler.logWarning('SourcesPageManager.handleArticleToggle', MESSAGES.WARNINGS.ELEMENT_MISSING);
+      return;
+    }
+    
+    article.classList.toggle(CSS_CLASSES.SOURCES_ARTICLE_EXPANDED);
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-  SourcesPage.init();
+  new SourcesPageManager();
 });

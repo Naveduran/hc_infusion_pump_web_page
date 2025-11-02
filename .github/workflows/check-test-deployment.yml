@@ -1,0 +1,103 @@
+name: Check Test Deployment
+
+on:
+  schedule:
+    # Check test deployment daily at 9 AM UTC
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+    # Allow manual trigger
+
+jobs:
+  check-test-deployment:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Check test deployment accessibility
+      run: |
+        TEST_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/test/"
+        
+        echo "Checking test deployment at: $TEST_URL"
+        
+        # Check if the test deployment is accessible
+        HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$TEST_URL" || echo "000")
+        
+        if [ "$HTTP_STATUS" = "200" ]; then
+          echo "✅ Test deployment is accessible (HTTP $HTTP_STATUS)"
+        else
+          echo "❌ Test deployment is not accessible (HTTP $HTTP_STATUS)"
+          echo "::error::Test deployment check failed with status $HTTP_STATUS"
+          exit 1
+        fi
+        
+    - name: Validate test deployment content
+      run: |
+        TEST_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/test/"
+        
+        # Download and check content
+        CONTENT=$(curl -s "$TEST_URL")
+        
+        # Check for essential elements
+        if echo "$CONTENT" | grep -q "OpenCortisol"; then
+          echo "✅ Site title found"
+        else
+          echo "❌ Site title not found"
+          exit 1
+        fi
+        
+        if echo "$CONTENT" | grep -q "assets/css/main.css"; then
+          echo "✅ CSS assets linked"
+        else
+          echo "❌ CSS assets not found"
+          exit 1
+        fi
+        
+        if echo "$CONTENT" | grep -q "assets/js/"; then
+          echo "✅ JavaScript assets linked"
+        else
+          echo "❌ JavaScript assets not found"
+          exit 1
+        fi
+        
+        echo "✅ Test deployment content validation passed"
+        
+    - name: Create issue on failure
+      if: failure()
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const title = '🚨 Test Deployment Check Failed';
+          const body = `The automated test deployment check has failed.
+          
+          **Details:**
+          - Repository: ${{ github.repository }}
+          - Test URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/test/
+          - Check Time: ${new Date().toISOString()}
+          - Workflow Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          
+          Please investigate and ensure the test deployment is working correctly before merging any PRs to main.
+          
+          **Action Required:**
+          1. Check the test branch deployment
+          2. Verify GitHub Pages settings
+          3. Review recent changes to the test branch
+          4. Close this issue once resolved`;
+          
+          // Check if issue already exists
+          const { data: issues } = await github.rest.issues.listForRepo({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            state: 'open',
+            labels: 'deployment-check'
+          });
+          
+          const existingIssue = issues.find(issue => issue.title === title);
+          
+          if (!existingIssue) {
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['deployment-check', 'bug']
+            });
+          }

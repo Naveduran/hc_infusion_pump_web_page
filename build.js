@@ -62,8 +62,25 @@ const copyDir = (src, dest) => {
   });
 };
 
+// Clean up TypeScript files from dist after copying
+const cleanupTypeScriptFiles = (dir) => {
+  const files = fs.readdirSync(dir);
+  files.forEach(file => {
+    const filePath = path.join(dir, file);
+    if (fs.statSync(filePath).isDirectory()) {
+      cleanupTypeScriptFiles(filePath);
+    } else if (file.endsWith('.ts')) {
+      fs.unlinkSync(filePath);
+    }
+  });
+};
+
 try {
   copyDir('assets', 'dist/assets');
+  // Clean up any TypeScript files that may have been copied
+  if (fs.existsSync('dist/assets')) {
+    cleanupTypeScriptFiles('dist/assets');
+  }
 } catch (error) {
   console.error('Error copying assets:', error.message);
   process.exit(1);
@@ -76,9 +93,7 @@ const htmlFiles = [
   'team.html',
   'research.html',
   'sources.html',
-  'coming_soon.html',
-  'bibliography.html',
-  'proof.html'
+  'coming_soon.html'
 ];
 
 htmlFiles.forEach(file => {

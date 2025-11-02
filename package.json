@@ -1,5 +1,6 @@
 {
-  "name": "hc-infusion-pump-web-page",
+  "name": "@opencortisol/hc-infusion-pump-web-page",
+  "private": true,
   "version": "1.0.0",
   "scripts": {
     "build": "node build.js",

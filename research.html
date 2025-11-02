@@ -142,7 +142,7 @@
                         </div>
                     </div>
                     <div class="expandable">
-                        <div class="expandable__trigger" onclick="toggleExpandable(this)">
+                        <div class="expandable__trigger" data-action="toggle-expandable">
                             <span><strong>Technical Details:</strong> How the $89 pump works</span>
                             <svg class="expandable__icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -229,17 +229,7 @@
     <!-- FOOTER_PLACEHOLDER -->
     <!-- /FOOTER_PLACEHOLDER -->
 
-    <script src="assets/js/buttons.js"></script>
-    <script>
-        
-        // Expandable sections
-        function toggleExpandable(trigger) {
-            const content = trigger.nextElementSibling;
-            const icon = trigger.querySelector('.expandable__icon');
-            
-            content.classList.toggle('expanded');
-            icon.classList.toggle('rotated');
-        }
-    </script>
+    <script type="module" src="assets/js/buttons.js"></script>
+    <script type="module" src="assets/js/research-page.js"></script>
 </body>
 </html>
