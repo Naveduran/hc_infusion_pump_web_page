@@ -1,0 +1,54 @@
+name: Staging Deployment
+
+on:
+  push:
+    branches: [ test ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/test
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+        
+    - name: Install and build
+      run: |
+        npm ci
+        npm run build
+        
+    - name: Deploy to staging
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+        publish_branch: gh-pages-test
+        force_orphan: true
+        
+    - name: Integration tests
+      run: |
+        sleep 30
+        STAGING_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/test/"
+        
+        # Basic availability
+        curl -f "$STAGING_URL"
+        
+        # Content validation
+        CONTENT=$(curl -s "$STAGING_URL")
+        echo "$CONTENT" | grep -q "OpenCortisol" || exit 1
+        echo "$CONTENT" | grep -q "assets/css/main.css" || exit 1
+        
+        echo "✅ Staging deployment validated"
