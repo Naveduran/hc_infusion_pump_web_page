@@ -96,6 +96,7 @@ const htmlFiles = [
   'coming_soon.html'
 ];
 
+// Process English files
 htmlFiles.forEach(file => {
   if (fs.existsSync(file)) {
     try {
@@ -114,5 +115,44 @@ htmlFiles.forEach(file => {
     }
   }
 });
+
+// Process Spanish files
+if (fs.existsSync('es')) {
+  // Read Spanish templates
+  let headerEs, footerEs;
+  try {
+    headerEs = fs.readFileSync('es/_includes/header.html', 'utf8');
+    footerEs = fs.readFileSync('es/_includes/footer.html', 'utf8');
+  } catch (error) {
+    console.error('Error reading Spanish template files:', error.message);
+    process.exit(1);
+  }
+
+  // Create Spanish dist directory
+  if (!fs.existsSync('dist/es')) {
+    fs.mkdirSync('dist/es');
+  }
+
+  // Process Spanish HTML files
+  htmlFiles.forEach(file => {
+    const spanishFile = `es/${file}`;
+    if (fs.existsSync(spanishFile)) {
+      try {
+        let content = fs.readFileSync(spanishFile, 'utf8');
+        
+        // Replace header placeholder
+        content = content.replace(/<!-- HEADER_PLACEHOLDER -->[\s\S]*?<!-- \/HEADER_PLACEHOLDER -->/, headerEs);
+        
+        // Replace footer placeholder  
+        content = content.replace(/<!-- FOOTER_PLACEHOLDER -->[\s\S]*?<!-- \/FOOTER_PLACEHOLDER -->/, footerEs);
+        
+        fs.writeFileSync(`dist/es/${file}`, content);
+      } catch (error) {
+        console.error(`Error processing Spanish ${file}:`, error.message);
+        process.exit(1);
+      }
+    }
+  });
+}
 
 console.log('Build completed successfully!');

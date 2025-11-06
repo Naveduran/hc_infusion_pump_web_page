@@ -1,0 +1,42 @@
+name: Main Branch Protection
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check-test-deployment:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Check if test deployment exists
+      run: |
+        # Check if test branch deployment was successful
+        curl -f -s "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/test/" || {
+          echo "❌ Test deployment not found or failed"
+          echo "Please ensure test branch is deployed successfully before merging to main"
+          exit 1
+        }
+        echo "✅ Test deployment verified"
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build project
+      run: npm run build
+      
+    - name: Verify build success
+      run: |
+        if [ ! -d "dist" ]; then
+          echo "❌ Build failed - dist directory not found"
+          exit 1
+        fi
+        echo "✅ Build successful"

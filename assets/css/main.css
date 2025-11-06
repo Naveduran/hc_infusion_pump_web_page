@@ -15,6 +15,7 @@
 @import 'components/hero.css';
 @import 'components/spacing.css';
 @import 'components/research-cards.css';
+@import 'components/expandable.css';
 
 /* Pages */
 @import 'pages/home.css';
