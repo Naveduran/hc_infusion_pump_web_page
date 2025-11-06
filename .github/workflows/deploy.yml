@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - '**.md'
       - 'LICENSE'
+      - '.amazonq/**'
 
 concurrency:
   group: pages-${{ github.ref_name }}

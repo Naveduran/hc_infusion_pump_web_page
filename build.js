@@ -81,7 +81,7 @@ const htmlFiles = [
   'index.html',
   'support.html',
   'team.html',
-  'research.html',
+  'mystory.html',
   'sources.html'
 ];
 
