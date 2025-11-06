@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; img-src 'self' data: https:; frame-src 'none'; object-src 'none'; form-action 'self' https://www.paypal.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; img-src 'self' data: https: https://www.paypalobjects.com; frame-src 'none'; object-src 'none'; form-action 'self' https://www.paypal.com;">
     <title>Apoyo - OpenCortisol</title>
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -35,12 +35,14 @@
                         <h3 class="heading-3">Financia un Prototipo</h3>
                         <p>Los materiales del prototipo de pruebas cuestan <strong>$85</strong>. Cada contribución ayuda - incluso <strong>$5</strong> hace la diferencia.</p>
                         <div class="action-button">
-                            <button class="btn btn--primary" data-action="external-redirect" data-url="https://www.paypal.com/donate/?business=B8RZJREEHVCNL&no_recurring=0&currency_code=USD">
-                                <svg class="btn__icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                                </svg>
-                                Ayuda a Financiar Investigación
-                            </button>
+                            <div>
+                                <style>.pp-B8RZJREEHVCNL{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+                                <form action="https://www.paypal.com/ncp/payment/B8RZJREEHVCNL" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+                                    <input class="pp-B8RZJREEHVCNL" type="submit" value="Ayuda a Financiar Investigación" />
+                                    <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
+                                    <section style="font-size: 0.75rem;"> Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+                                </form>
+                            </div>
                         </div>
                     </div>
                     <div class="card">
