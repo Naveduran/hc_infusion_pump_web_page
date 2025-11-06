@@ -6,6 +6,8 @@
 import { ErrorHandler } from './utils.js';
 
 class LanguageSwitcher {
+  private readonly baseUrl = 'https://naveduran.github.io/open_cortisol';
+
   constructor() {
     this.init();
   }
@@ -38,15 +40,9 @@ class LanguageSwitcher {
       const currentPage = this.getCurrentPageName(currentPath);
       const isSpanishPage = currentPath.includes('/es/');
       
-      let targetUrl: string;
-      
-      if (isSpanishPage) {
-        // Switch from Spanish to English
-        targetUrl = currentPage === 'index.html' ? '../index.html' : `../${currentPage}`;
-      } else {
-        // Switch from English to Spanish
-        targetUrl = `es/${currentPage}`;
-      }
+      const targetUrl = isSpanishPage 
+        ? `${this.baseUrl}/${currentPage}` 
+        : `${this.baseUrl}/es/${currentPage}`;
       
       window.location.href = targetUrl;
     } catch (error) {
@@ -55,22 +51,14 @@ class LanguageSwitcher {
   }
 
   private getCurrentPageName(path: string): string {
-    // Extract page name from path
-    const segments = path.split('/');
+    const segments = path.split('/').filter(Boolean);
     const lastSegment = segments[segments.length - 1];
     
-    // If empty or ends with /, it's index
-    if (!lastSegment || lastSegment === '' || path.endsWith('/')) {
+    if (!lastSegment || lastSegment === 'es') {
       return 'index.html';
     }
     
-    // If it's a .html file, return it
-    if (lastSegment.endsWith('.html')) {
-      return lastSegment;
-    }
-    
-    // Default to index
-    return 'index.html';
+    return lastSegment.endsWith('.html') ? lastSegment : 'index.html';
   }
 }
 

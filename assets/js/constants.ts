@@ -4,11 +4,6 @@
  */
 
 export const SELECTORS = {
-  // Collapsible elements
-  COLLAPSIBLE_HEADER: '.collapsible-header',
-  COLLAPSIBLE_ICON: '.collapsible-icon',
-  RESEARCH_TITLE: '.research-title',
-  
   // Sources page
   SOURCES_TOPIC_HEADER: '.sources-topic__header',
   SOURCES_TOPIC: '.sources-topic',

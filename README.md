@@ -63,8 +63,8 @@ Open-source hydrocortisone pump technology website built with modular BEM CSS an
 ## Deployment
 
 ### Deployment
-- **Production**: `https://[username].github.io/hc_infusion_pump_web_page/`
-- **Test**: `https://[username].github.io/hc_infusion_pump_web_page/test/`
+- **Production**: `https://naveduran.github.io/open_cortisol/`
+- **Test**: `https://naveduran.github.io/open_cortisol/test/`
 
 ### Setup
 ```bash
