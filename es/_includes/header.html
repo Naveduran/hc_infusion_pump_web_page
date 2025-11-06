@@ -1,0 +1,37 @@
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__logo">Proyecto OpenCortisol</div>
+            <ul class="nav__menu">
+                <li><a href="index.html" class="nav__link">Inicio</a></li>
+                <li><a href="research.html" class="nav__link">Investigación</a></li>
+                <li><a href="team.html" class="nav__link">Equipo</a></li>
+                <li><a href="support.html" class="nav__link">Apoyo</a></li>
+                <li><a href="sources.html" class="nav__link">Fuentes</a></li>
+                <li><a href="../index.html" class="nav__link nav__link--lang">English</a></li>
+            </ul>
+
+            <button class="nav__toggle" aria-label="Alternar menú de navegación" aria-expanded="false">☰</button>
+            <nav class="nav__mobile" role="navigation" aria-label="Navegación móvil">
+                <a href="index.html" class="nav__mobile-link">Inicio</a>
+                <a href="research.html" class="nav__mobile-link">Investigación</a>
+                <a href="team.html" class="nav__mobile-link">Equipo</a>
+                <a href="support.html" class="nav__mobile-link">Apoyo</a>
+                <a href="sources.html" class="nav__mobile-link">Fuentes</a>
+                <a href="../index.html" class="nav__mobile-link nav__mobile-link--lang">English</a>
+            </nav>
+        </nav>
+    </header>
+    
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.nav__toggle');
+            const mobileMenu = document.querySelector('.nav__mobile');
+            
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('nav__mobile--active');
+                });
+            }
+        });
+    </script>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; img-src 'self' data: https:; frame-src 'none'; object-src 'none'; form-action 'self' https://www.paypal.com;">
+    <title>Viaje de la Investigación - Proyecto OpenCortisol</title>
+    <meta name="description" content="El viaje de investigación detrás del Proyecto OpenCortisol - desde la lucha del paciente hasta el descubrimiento científico y la innovación de código abierto.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="../assets/css/main.css" as="style">
+
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .expandable {
+            margin: var(--space-4) 0;
+        }
+        .expandable__trigger {
+            background: var(--gray-100);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            padding: var(--space-3);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+        .expandable__trigger:hover {
+            background: var(--gray-200);
+        }
+        .expandable__content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-top: none;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+        .expandable__content.expanded {
+            max-height: 500px;
+            padding: var(--space-4);
+        }
+        .expandable__icon {
+            transition: transform 0.3s ease;
+        }
+        .expandable__icon.rotated {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER_PLACEHOLDER -->
+    <!-- /HEADER_PLACEHOLDER -->
+
+    <main>
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="container">
+                <h1 class="heading-1">El Viaje de la Investigación</h1>
+                <p class="text-large hero__description">
+                    Desde la lucha del paciente hasta el descubrimiento científico - la historia detrás de nuestra misión
+                </p>
+            </div>
+        </header>
+
+        <!-- Introduction Section -->
+        <section class="section" aria-labelledby="introduction-heading">
+            <div class="container">
+                <h2 id="introduction-heading" class="heading-2">Primera Luz de Fe</h2>
+                
+                <article class="research-story">
+                    <div class="pull-quote">
+                        <p class="pull-quote__text">
+                            El tratamiento "óptimo" no estaba funcionando para mí.
+                        </p>
+                    </div>
+                    
+                    <div class="research-story__content">
+                        <p>
+                            La niebla mental y el cansancio implacable me convirtieron en una extraña para mí misma. No podía usar mi cerebro para pensar rápida o claramente, lo que significaba que no podía trabajar o estudiar.
+                        </p>
+                        
+                        <div class="pull-quote">
+                            <p class="pull-quote__text">
+                                Mi vida se había detenido en mi mejor momento.
+                            </p>
+                        </div>
+                        
+                        <p>
+                            Impulsada por la desesperación, acostada, indefensa, no podía dejar de buscar una solución. Usando mi formación académica, me sumergí a leer artículos de investigación para entender, primero, ¿qué era lo que tenía?, y luego, cuando ya tenía el tratamiento, ¿por qué no me funcionaba?
+                        </p>
+                        
+                        <p>
+                            Con mi cerebro leeeento como una tortuga, eventualmente entendí que lo que mi cuerpo me decía ya había sido escuchado por muchos endocrinólogos, y que tenían propuestas de como arreglarlo. Comprobaban con estudios muy rigurosos, que al usar bombas de cortisol para emular la "pulsatilidad" natural en los ritmos de cortisol eran capaz de mejorar la calidad de vida y la mayoría de los síntomas.
+                        </p>
+                    </div>
+                    
+                    <div class="research-story__action">
+                        <a href="coming_soon.html" class="btn btn--secondary">
+                            <svg class="btn__icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                            Investigaciones con bombas con hidrocortisona
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Discovery Section -->
+        <section class="section section--light" aria-labelledby="discovery-heading">
+            <div class="container">
+                <h2 id="discovery-heading" class="heading-2">El Descubrimiento</h2>
+                
+                <article class="research-story">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div>
+                            <h4>La Búsqueda</h4>
+                            <p>Sintiéndome inspirada, busqué precios de bombas comerciales... $3,000. $4,500. $6,500 dólares. Mi corazón se hundió. No solo eran extremadamente caras, definitivamente no estaban disponibles en mi país.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div>
+                            <h4>El Descubrimiento</h4>
+                            <p>Pero nunca me rindo. Entonces lo encontré: Un artículo de investigación sobre una bomba de insulina de $89 dólares que funcionaba tan bien como las costosas. Los investigadores habían hecho todo accesible por internet, replicable, sin barrreras de pago, sin patentes - los diseños, el código, todo.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div>
+                            <h4>La Inspiración</h4>
+                            <p>En ese momento, me di cuenta de que podíamos utilizar los diseños y modificar el código para hacer lo mismo para la hidrocortisona. Podíamos construir esperanza desde la ciencia.</p>
+                        </div>
+                    </div>
+                    <div class="expandable">
+                        <div class="expandable__trigger" data-action="toggle-expandable">
+                            <span><strong>Detalles Técnicos:</strong> Cómo funciona la bomba de $89</span>
+                            <svg class="expandable__icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </div>
+                        <div class="expandable__content">
+                            <p><strong>Materiales:</strong> Carcasa impresa en 3D, microcontrolador Arduino, motor paso a paso, tubería de grado médico</p>
+                            <p><strong>Rendimiento:</strong> ±5% precisión en administración de insulina, 72 horas de batería, tasas basales programables</p>
+                            <p><strong>Seguridad:</strong> Detección de oclusión, alertas de batería baja, mecanismos a prueba de fallos</p>
+                            <p><strong>Desglose de Costos:</strong> Electrónicos ($45), materiales de impresión 3D ($12), tubería y conectores ($18), ensamblaje ($14)</p>
+                        </div>
+                    </div>
+                    <div class="research-story__action--centered">
+                        <button class="btn btn--primary" data-action="external-redirect" data-url="https://www.sciencedirect.com/science/article/pii/S2468067222001201/pdfft?md5=4099c7296005d21fb545a7f1905b17c4&pid=1-s2.0-S2468067222001201-main.pdf">
+                            <svg class="btn__icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            Bomba de insulina modificable
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Innovation Section -->
+        <section class="section" aria-labelledby="innovation-heading">
+            <div class="container">
+                <h2 id="innovation-heading" class="heading-2">La Innovación</h2>
+                
+                <article class="research-story">
+                    <div class="research-story__icon">
+                        <svg class="innovation-icon" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 21c0 .5.4 1 1 1h4c.6 0 1-.5 1-1v-1H9v1zm3-19C8.1 2 5 5.1 5 9c0 2.4 1.2 4.5 3 5.7V17c0 .5.4 1 1 1h6c.6 0 1-.5 1-1v-2.3c1.8-1.3 3-3.4 3-5.7 0-3.9-3.1-7-7-7z"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="pull-quote">
+                        <p class="pull-quote__text">
+                            Podríamos combinar la investigación sobre ritmos pulsátiles de hidrocortisona con dispositivos imprimibles en 3D de código abierto de bajo costo.
+                        </p>
+                        <p class="pull-quote__text">
+                            Podríamos crear una bomba de hidrocortisona imprimible en 3D de código abierto de bajo costo.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Hope Section -->
+        <section class="section section--light" aria-labelledby="hope-heading">
+            <div class="container">
+                <h2 id="hope-heading" class="heading-2">Esperanza Renovada</h2>
+                
+                <article class="research-story">
+                    <div class="research-story__content">
+                        <p>
+                            Esto me dio una sensación renovada de esperanza. Espero que usar la bomba restaure los ritmos naturales fisiológicos de cortisol, elimine la niebla mental y el cansancio para poder reconectarme con la persona vibrante que amo ser.
+                        </p>
+                        
+                        <div class="pull-quote">
+                            <p class="pull-quote__text">
+                                Quiero volver a hacer una diferencia a través de trabajo significativo, y ganar un sustento para apoyar a mi familia.
+                            </p>
+                        </div>
+                        
+                        <p>
+                            Hicimos este sitio web con mi pareja, que me ha apoyado en todo este proceso <3 , para compartir las buenas nuevas y encontrar apoyo.
+                        </p>
+                    </div>
+                    
+                    <div class="research-story__action research-story__action--centered">
+                        <a href="support.html" class="btn btn--primary btn--large">
+                            <svg class="btn__icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                            Únete a Nuestra Misión
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER_PLACEHOLDER -->
+    <!-- /FOOTER_PLACEHOLDER -->
+
+    <script type="module" src="../assets/js/buttons.js"></script>
+    <script type="module" src="../assets/js/research-page.js"></script>
+</body>
+</html>
