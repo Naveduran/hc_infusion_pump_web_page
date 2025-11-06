@@ -5,7 +5,6 @@
    - **Test branch:** Require status checks only
 
 ## Deployment Flow
-
 ```
 feature-branch → test → main
 ```
