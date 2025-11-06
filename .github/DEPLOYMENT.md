@@ -1,10 +1,15 @@
 # Deployment Guide
 
-**Branch protection settings: (Settings → Branches):**
-   - **Main branch:** Require PR + 1 approval + status checks
-   - **Test branch:** Require status checks only
+## Quick Setup
+
+1. **Enable GitHub Pages:** Settings → Pages → Source: "GitHub Actions"
+2. **Create test branch:** `git checkout -b test && git push -u origin test`
+3. **Configure branch protection:** Settings → Branches
+   - **Main:** Require PR + 1 approval + status checks (`build`, `deploy-main`)
+   - **Test:** Require status checks (`build`, `deploy-test`)
 
 ## Deployment Flow
+
 ```
 feature-branch → test → main
 ```
@@ -14,8 +19,8 @@ feature-branch → test → main
 
 ## How It Works
 
-- Push to `test` → deploys to test URL
-- PR from `test` to `main` → requires approval + successful test deployment
-- Merge to `main` → deploys to production URL
+- Push to `test` → builds + deploys to test URL (gh-pages-test branch)
+- Push to `main` → builds + deploys to production URL (github-pages environment)
+- Workflow automatically handles both branches with separate jobs
 
-Single workflow file (`.github/workflows/deploy.yml`) handles both branches automatically.
+Single workflow file handles everything: `.github/workflows/deploy.yml`

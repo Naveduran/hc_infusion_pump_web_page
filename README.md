@@ -62,20 +62,18 @@ Open-source hydrocortisone pump technology website built with modular BEM CSS an
 
 ## Deployment
 
-### Branch Strategy
-- **Main**: `https://[username].github.io/hc_infusion_pump_web_page/` (production)
-- **Test**: `https://[username].github.io/hc_infusion_pump_web_page/test/` (testing)
+### Deployment
+- **Production**: `https://[username].github.io/hc_infusion_pump_web_page/`
+- **Test**: `https://[username].github.io/hc_infusion_pump_web_page/test/`
 
-### Setup Test Branch
+### Setup
 ```bash
+# Enable GitHub Pages: Settings → Pages → Source: "GitHub Actions"
 git checkout -b test
 git push -u origin test
 ```
 
-### GitHub Settings
-1. **Settings** → **Pages** → **Source**: "GitHub Actions"
-2. Push to any branch triggers auto-deployment
-3. `dist/` folder and `gh-pages` branches are auto-managed
+See `.github/DEPLOYMENT.md` for detailed setup instructions.
 
 ### Local Testing
 ```bash
