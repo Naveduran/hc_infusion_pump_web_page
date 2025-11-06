@@ -15,7 +15,7 @@
   <title>[Page Title] - OpenCortisol</title>
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body>
+<body class="page-[name]">
   <!-- HEADER_PLACEHOLDER -->
   <!-- /HEADER_PLACEHOLDER -->
   
