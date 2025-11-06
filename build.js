@@ -22,9 +22,12 @@ try {
   process.exit(1);
 }
 
-// Create dist directory
+// Create dist directories
 if (!fs.existsSync('dist')) {
   fs.mkdirSync('dist');
+}
+if (!fs.existsSync('dist/assets/js')) {
+  fs.mkdirSync('dist/assets/js', { recursive: true });
 }
 
 // Compile TypeScript if available
@@ -45,55 +48,41 @@ const copyDir = (src, dest) => {
   if (!fs.existsSync(dest)) {
     fs.mkdirSync(dest, { recursive: true });
   }
-  const files = fs.readdirSync(src);
+  
+  let files;
+  try {
+    files = fs.readdirSync(src);
+  } catch (error) {
+    console.error(`Error reading directory ${src}:`, error.message);
+    return;
+  }
+  
   files.forEach(file => {
     const srcPath = path.join(src, file);
     const destPath = path.join(dest, file);
+    
     try {
-      if (fs.statSync(srcPath).isDirectory()) {
+      const stat = fs.statSync(srcPath);
+      if (stat.isDirectory()) {
         copyDir(srcPath, destPath);
       } else if (!file.endsWith('.ts')) {
         fs.copyFileSync(srcPath, destPath);
       }
     } catch (error) {
       console.error(`Error copying ${srcPath}:`, error.message);
-      throw error;
     }
   });
 };
 
-// Clean up TypeScript files from dist after copying
-const cleanupTypeScriptFiles = (dir) => {
-  const files = fs.readdirSync(dir);
-  files.forEach(file => {
-    const filePath = path.join(dir, file);
-    if (fs.statSync(filePath).isDirectory()) {
-      cleanupTypeScriptFiles(filePath);
-    } else if (file.endsWith('.ts')) {
-      fs.unlinkSync(filePath);
-    }
-  });
-};
-
-try {
-  copyDir('assets', 'dist/assets');
-  // Clean up any TypeScript files that may have been copied
-  if (fs.existsSync('dist/assets')) {
-    cleanupTypeScriptFiles('dist/assets');
-  }
-} catch (error) {
-  console.error('Error copying assets:', error.message);
-  process.exit(1);
-}
+copyDir('assets', 'dist/assets');
 
 // Process HTML files
 const htmlFiles = [
   'index.html',
   'support.html',
   'team.html',
-  'research.html',
-  'sources.html',
-  'coming_soon.html'
+  'mystory.html',
+  'sources.html'
 ];
 
 // Process English files
@@ -101,24 +90,19 @@ htmlFiles.forEach(file => {
   if (fs.existsSync(file)) {
     try {
       let content = fs.readFileSync(file, 'utf8');
-      
-      // Replace header placeholder
       content = content.replace(/<!-- HEADER_PLACEHOLDER -->[\s\S]*?<!-- \/HEADER_PLACEHOLDER -->/, header);
-      
-      // Replace footer placeholder  
       content = content.replace(/<!-- FOOTER_PLACEHOLDER -->[\s\S]*?<!-- \/FOOTER_PLACEHOLDER -->/, footer);
-      
       fs.writeFileSync(`dist/${file}`, content);
     } catch (error) {
       console.error(`Error processing ${file}:`, error.message);
-      process.exit(1);
     }
   }
 });
 
 // Process Spanish files
-if (fs.existsSync('es')) {
-  // Read Spanish templates
+function processSpanishFiles() {
+  if (!fs.existsSync('es')) return;
+  
   let headerEs, footerEs;
   try {
     headerEs = fs.readFileSync('es/_includes/header.html', 'utf8');
@@ -128,31 +112,25 @@ if (fs.existsSync('es')) {
     process.exit(1);
   }
 
-  // Create Spanish dist directory
   if (!fs.existsSync('dist/es')) {
     fs.mkdirSync('dist/es');
   }
 
-  // Process Spanish HTML files
   htmlFiles.forEach(file => {
     const spanishFile = `es/${file}`;
     if (fs.existsSync(spanishFile)) {
       try {
         let content = fs.readFileSync(spanishFile, 'utf8');
-        
-        // Replace header placeholder
         content = content.replace(/<!-- HEADER_PLACEHOLDER -->[\s\S]*?<!-- \/HEADER_PLACEHOLDER -->/, headerEs);
-        
-        // Replace footer placeholder  
         content = content.replace(/<!-- FOOTER_PLACEHOLDER -->[\s\S]*?<!-- \/FOOTER_PLACEHOLDER -->/, footerEs);
-        
         fs.writeFileSync(`dist/es/${file}`, content);
       } catch (error) {
         console.error(`Error processing Spanish ${file}:`, error.message);
-        process.exit(1);
       }
     }
   });
 }
+
+processSpanishFiles();
 
 console.log('Build completed successfully!');

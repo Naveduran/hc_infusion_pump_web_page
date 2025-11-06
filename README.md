@@ -12,8 +12,8 @@ Open-source hydrocortisone pump technology website built with modular BEM CSS an
 
 1. **Clone and configure:**
    ```bash
-   git clone <repository-url>
-   cd hc_infusion_pump_web_page
+   git clone https://github.com/Naveduran/open_cortisol.git
+   cd open_cortisol
    
    # Configure Git for cross-platform compatibility
    git config core.autocrlf false
@@ -63,8 +63,8 @@ Open-source hydrocortisone pump technology website built with modular BEM CSS an
 ## Deployment
 
 ### Deployment
-- **Production**: `https://[username].github.io/hc_infusion_pump_web_page/`
-- **Test**: `https://[username].github.io/hc_infusion_pump_web_page/test/`
+- **Production**: `https://naveduran.github.io/open_cortisol/`
+- **Test**: `https://naveduran.github.io/open_cortisol/test/`
 
 ### Setup
 ```bash
@@ -103,19 +103,15 @@ git rm --cached **/.DS_Store 2>/dev/null || true
 ## Available Pages
 
 ### English Version
-- **Home** (`index.html`) - Landing page with project overview and call to action
-- **My story** (`research.html`) - Personal journey from patient struggle to scientific discovery
+- **Home** (`index.html`) - Landing page with project overview
+- **My story** (`mystory.html`) - Personal journey and scientific discovery
 - **Team** (`team.html`) - Meet the team and join our mission
-- **Support** (`support.html`) - Ways to support the project financially and through collaboration
+- **Support** (`support.html`) - Ways to support with PayPal integration
 - **Sources** (`sources.html`) - Scientific research and references
 
 ### Spanish Version (`/es/`)
-- **Inicio** (`es/index.html`) - Página principal con resumen del proyecto
-- **Mi historia** (`es/research.html`) - Viaje personal desde la lucha del paciente hasta el descubrimiento científico
-- **Equipo** (`es/team.html`) - Conoce al equipo y únete a nuestra misión
-- **Apoyo** (`es/support.html`) - Formas de apoyar el proyecto financieramente y mediante colaboración
-- **Recursos** (`es/sources.html`) - Investigación científica y referencias
-
-## CSS Architecture
-
-Uses BEM methodology with CSS custom properties. All styles in `assets/css/` with modular imports.
+- **Inicio** (`es/index.html`) - Página principal del proyecto
+- **Mi historia** (`es/mystory.html`) - Viaje personal y descubrimiento científico
+- **Equipo** (`es/team.html`) - Conoce al equipo y únete
+- **Apoyo** (`es/support.html`) - Formas de apoyar con integración PayPal
+- **Recursos** (`es/sources.html`) - Investigación científica

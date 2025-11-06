@@ -1,5 +1,5 @@
 /**
- * Research Page Manager
+ * Mystory Page Manager
  * Handles expandable sections functionality
  */
 
@@ -10,7 +10,7 @@ interface ExpandableElement extends HTMLElement {
   dataset: DOMStringMap;
 }
 
-class ResearchPageManager {
+class MystoryPageManager {
   constructor() {
     this.init();
   }
@@ -19,7 +19,7 @@ class ResearchPageManager {
     try {
       this.bindExpandableTriggers();
     } catch (error) {
-      ErrorHandler.logError('ResearchPageManager init', error);
+      ErrorHandler.logError('MystoryPageManager init', error);
     }
   }
 
@@ -27,7 +27,7 @@ class ResearchPageManager {
     try {
       const triggers = document.querySelectorAll<ExpandableElement>(SELECTORS.EXPANDABLE_TRIGGER);
       if (triggers.length === 0) {
-        ErrorHandler.logWarning('ResearchPageManager.bindExpandableTriggers', 'No expandable triggers found');
+        ErrorHandler.logWarning('MystoryPageManager.bindExpandableTriggers', 'No expandable triggers found');
         return;
       }
       
@@ -35,19 +35,19 @@ class ResearchPageManager {
         trigger.addEventListener('click', this.handleExpandableToggle.bind(this));
       });
     } catch (error) {
-      ErrorHandler.logError('ResearchPageManager.bindExpandableTriggers', error);
+      ErrorHandler.logError('MystoryPageManager.bindExpandableTriggers', error);
     }
   }
 
   private handleExpandableToggle(event: Event): void {
     if (!event.currentTarget) {
-      ErrorHandler.logWarning('ResearchPageManager.handleExpandableToggle', 'Event target is null');
+      ErrorHandler.logWarning('MystoryPageManager.handleExpandableToggle', 'Event target is null');
       return;
     }
     
     const trigger = event.currentTarget as ExpandableElement;
     if (!trigger.nextElementSibling) {
-      ErrorHandler.logWarning('ResearchPageManager.handleExpandableToggle', 'No content element found');
+      ErrorHandler.logWarning('MystoryPageManager.handleExpandableToggle', 'No content element found');
       return;
     }
     
@@ -55,7 +55,7 @@ class ResearchPageManager {
     const icon = trigger.querySelector('.expandable__icon') as HTMLElement;
     
     if (!content.classList) {
-      ErrorHandler.logWarning('ResearchPageManager.handleExpandableToggle', 'Content element missing classList');
+      ErrorHandler.logWarning('MystoryPageManager.handleExpandableToggle', 'Content element missing classList');
       return;
     }
 
@@ -65,11 +65,11 @@ class ResearchPageManager {
         icon.classList.toggle('rotated');
       }
     } catch (error) {
-      ErrorHandler.logError('ResearchPageManager.handleExpandableToggle', error);
+      ErrorHandler.logError('MystoryPageManager.handleExpandableToggle', error);
     }
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  new ResearchPageManager();
+  new MystoryPageManager();
 });

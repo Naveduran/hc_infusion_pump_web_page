@@ -5,80 +5,80 @@
 ### Colors
 ```css
 /* Primary Colors */
---primary-blue: #1e40af
---primary-orange: #ea580c
---primary-orange-dark: #c2410c
---secondary-yellow: #f59e0b
+--primary-blue
+--primary-orange
+--primary-orange-dark
+--secondary-yellow
 
 /* Status Colors */
---success-green: #16a34a
---danger-red: #dc2626
---warning-blue: #2563eb
+--success-green
+--danger-red
+--warning-blue
 
 /* Gray Scale */
---gray-50: #f8fafc    (lightest)
---gray-100: #f1f5f9
---gray-200: #e2e8f0
---gray-300: #cbd5e1
---gray-400: #94a3b8
---gray-500: #64748b   (medium)
---gray-600: #475569
---gray-700: #334155
---gray-800: #1e293b
---gray-900: #0f172a   (darkest)
+--gray-50    (lightest)
+--gray-100
+--gray-200
+--gray-300
+--gray-400
+--gray-500   (medium)
+--gray-600
+--gray-700
+--gray-800
+--gray-900   (darkest)
 
 /* State Colors */
---danger-light: #fee2e2
---danger-medium: #fca5a5
---info-light: #dbeafe
---info-medium: #93c5fd
---warning-light: #fef3c7
---warning-medium: #fbbf24
+--danger-light
+--danger-medium
+--info-light
+--info-medium
+--warning-light
+--warning-medium
 ```
 
 ### Typography
 ```css
---font-family: 'Inter', sans-serif
---font-size-xs: 0.75rem
---font-size-sm: 0.875rem
---font-size-base: 1rem
---font-size-lg: 1.125rem
---font-size-xl: 1.25rem
---font-size-2xl: 1.5rem
---font-size-3xl: 1.875rem
---font-size-4xl: 2.25rem
+--font-family
+--font-size-xs
+--font-size-sm
+--font-size-base
+--font-size-lg
+--font-size-xl
+--font-size-2xl
+--font-size-3xl
+--font-size-4xl
 ```
 
 ### Spacing
 ```css
---space-1: 0.25rem    (4px)
---space-2: 0.5rem     (8px)
---space-3: 0.75rem    (12px)
---space-4: 1rem       (16px)
---space-5: 1.25rem    (20px)
---space-6: 1.5rem     (24px)
---space-8: 2rem       (32px)
---space-10: 2.5rem    (40px)
---space-12: 3rem      (48px)
---space-16: 4rem      (64px)
+--space-1    (smallest)
+--space-2
+--space-3
+--space-4    (base unit)
+--space-5
+--space-6
+--space-8
+--space-10
+--space-12
+--space-16   (largest)
 ```
 
 ### Layout & Effects
 ```css
---container-max-width: 1200px
---border-radius: 8px
---border-radius-lg: 12px
---header-height: 80px
---avatar-size: 40px
---timeline-label-width: 60px
+--container-max-width
+--border-radius
+--border-radius-lg
+--header-height
+--avatar-size
+--timeline-label-width
 
---shadow: 0 2px 10px rgba(0,0,0,0.1)
---shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)
---shadow-lg: 0 4px 15px rgba(0,0,0,0.1)
+--shadow
+--shadow-md
+--shadow-lg
 
---transition-fast: 0.15s
---transition-base: 0.2s
---transition-slow: 0.3s
+--transition-fast
+--transition-base
+--transition-slow
 ```
 
 ## Usage Examples
