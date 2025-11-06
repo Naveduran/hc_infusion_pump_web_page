@@ -12,8 +12,8 @@ Open-source hydrocortisone pump technology website built with modular BEM CSS an
 
 1. **Clone and configure:**
    ```bash
-   git clone <repository-url>
-   cd hc_infusion_pump_web_page
+   git clone https://github.com/Naveduran/open_cortisol.git
+   cd open_cortisol
    
    # Configure Git for cross-platform compatibility
    git config core.autocrlf false
@@ -115,7 +115,3 @@ git rm --cached **/.DS_Store 2>/dev/null || true
 - **Equipo** (`es/team.html`) - Conoce al equipo y únete
 - **Apoyo** (`es/support.html`) - Formas de apoyar con integración PayPal
 - **Recursos** (`es/sources.html`) - Investigación científica
-
-## CSS Architecture
-
-Uses BEM methodology with CSS custom properties. All styles in `assets/css/` with modular imports.
