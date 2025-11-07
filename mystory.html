@@ -14,10 +14,8 @@
     <link rel="preload" href="assets/css/main.css" as="style">
 
     <link rel="stylesheet" href="assets/css/main.css">
-
 </head>
 <body class="page-mystory">
-
     <!-- HEADER_PLACEHOLDER -->
     <!-- /HEADER_PLACEHOLDER -->
 
@@ -25,43 +23,49 @@
         <!-- Hero Section -->
         <header class="hero">
             <div class="container">
-                <h1 class="heading-1">My story</h1>
+                <h1 class="heading-1">My Story</h1>
                 <p class="text-large hero__description">
                     From patient struggle to scientific discovery - the story behind our mission
                 </p>
-
             </div>
         </header>
 
         <!-- Introduction Section -->
         <section class="section" aria-labelledby="introduction-heading">
             <div class="container">
-                <h2 id="introduction-heading" class="heading-2">First Light of Faith</h2>
+                <h2 id="introduction-heading" class="heading-2">How It All Started</h2>
                 
                 <article class="research-story">
-                    <div class="pull-quote">
-                        <p class="pull-quote__text">
-                            The "optimal" treatment wasn't working for me.
-                        </p>
-                    </div>
-                    
+                    <figure class="research-story__figure research-story__figure--portrait">
+                        <img src="assets/images/salmon.jpg" alt="Photo of Natalia" class="research-story__image research-story__image--portrait" loading="lazy">
+                        <figcaption class="research-story__caption">Natalia, project founder</figcaption>
+                    </figure>
+
                     <div class="research-story__content">
-                        <p>
-                            The brain fog and constant fatigue made me a stranger to myself. I couldn't think clearly or quickly, which meant I couldn't work or study.
-                        </p>
+                        <p>Hi! I'm Natalia and I have adrenal insufficiency since 2023.</p>
                         
                         <div class="pull-quote">
                             <p class="pull-quote__text">
-                                Life stopped at what should have been my best moment.
+                                The "optimal" treatment wasn't working for me.
                             </p>
                         </div>
                         
                         <p>
-                            Desperate and without strength, I couldn't stop searching for a solution, even if it was at the speed of a lame turtle. Using my academic background, I began reading hundreds of research articles to understand what was happening to me and why the treatment wasn't working.
+                            The brain fog and constant fatigue made me a stranger to myself. At first I thought it was exhaustion from working too much but no amount of rest worked. I couldn't think clearly or quickly, which meant I couldn't work or study.
+                        </p>
+                        
+                        <div class="pull-quote">
+                            <p class="pull-quote__text">
+                                Life stopped at my best moment, just when things were starting to go really well.
+                            </p>
+                        </div>
+                        
+                        <p>
+                            Desperate and without strength, I couldn't stop searching for a solution, even if it was at the speed of a lame turtle. First I went to dozens of doctors until I got my diagnosis, and then, using my academic background, I began reading hundreds of research articles to understand what was happening to me and why the treatment wasn't working.
                         </p>
                         
                         <p>
-                            I finally understood that my symptoms had already been studied by many endocrinologists. They had proposals to solve it: rigorous studies showed that cortisol pumps could mimic the body's natural rhythms and significantly improve quality of life.
+                            I finally understood that my symptoms had already been studied by many endocrinologists. They had proposals to solve it: rigorous studies showed that cortisol pumps could mimic the body's natural rhythms and significantly improve quality of life... But... they weren't available to me.
                         </p>
                     </div>
                     
@@ -83,27 +87,30 @@
                 <h2 id="discovery-heading" class="heading-2">The Discovery</h2>
                 
                 <article class="research-story">
+                    <figure class="research-story__figure">
+                        <img src="assets/images/insulin-pump-payne.png" alt="Open-source insulin pump prototype developed by Payne" class="research-story__image research-story__image--prototype" loading="lazy">
+                        <figcaption class="research-story__caption">$89 Insulin Pump - Open Source Prototype</figcaption>
+                    </figure>
+
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div>
-                            <h4>The Search</h4>
-                            <p>Inspired by the research, I searched for commercial pump prices... $3,000. $4,500. $6,500 dollars. My heart sank. Not only were they extremely expensive, but they weren't available in my country.</p>
+                            <p>Commercial drug infusion pumps cost... $3,000. $4,500. $6,500 dollars, and even if I could buy them, they didn't deliver medications with the rhythms required for cortisol. My heart sank. Not only were they extremely expensive, but they weren't available in my country.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div>
-                            <h4>The Discovery</h4>
-                            <p>But I never give up. I expanded my search and found an article about an $89 insulin pump that worked as well as the expensive ones. The researchers had shared everything for free: designs, code, instructions - no patents or barriers.</p>
+                            <p>But I never give up. I expanded my search and found an article about an $89 insulin pump that worked as well as the expensive ones and could be reprogrammed because it was <a href="https://www.google.com/search?q=open+source">"open source"</a>. The researchers had shared everything for free: bill of materials, assembly instructions, 3D print-ready design... and all without patents or barriers.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div>
-                            <h4>The Inspiration</h4>
-                            <p>At that moment I saw it clearly: we could adapt those designs to create a hydrocortisone pump. We could build hope from science.</p>
+                            <p>At that moment I saw it clearly: we had everything to build a solution.</p>
                         </div>
                     </div>
+
                     <div class="expandable">
                         <div class="expandable__trigger" data-action="toggle-expandable">
                             <span><strong>Technical Details:</strong> How the $89 pump works</span>
@@ -118,12 +125,13 @@
                             <p><strong>Cost Breakdown:</strong> Electronics ($45), 3D printing materials ($12), tubing and connectors ($18), assembly ($14)</p>
                         </div>
                     </div>
+
                     <div class="research-story__action--centered">
                         <a href="sources.html" class="btn btn--primary">
                             <svg class="btn__icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                             </svg>
-                            Modifiable insulin pump
+                            Open Source Insulin Pump Details
                         </a>
                     </div>
                 </article>
@@ -136,11 +144,7 @@
                 <h2 id="innovation-heading" class="heading-2">The Innovation</h2>
                 
                 <article class="research-story">
-                    <div class="research-story__icon">
-                        <svg class="innovation-icon" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M9 21c0 .5.4 1 1 1h4c.6 0 1-.5 1-1v-1H9v1zm3-19C8.1 2 5 5.1 5 9c0 2.4 1.2 4.5 3 5.7V17c0 .5.4 1 1 1h6c.6 0 1-.5 1-1v-2.3c1.8-1.3 3-3.4 3-5.7 0-3.9-3.1-7-7-7z"/>
-                        </svg>
-                    </div>
+                    <div class="research-story__icon">💡</div>
                     
                     <div class="pull-quote">
                         <p class="pull-quote__text">
@@ -160,6 +164,11 @@
                 <h2 id="hope-heading" class="heading-2">Renewed Hope</h2>
                 
                 <article class="research-story">
+                    <figure class="research-story__figure research-story__figure--portrait">
+                        <img src="assets/images/nata-and-nico.png" alt="Natalia and Nicolas, OpenCortisol project founders" class="research-story__image research-story__image--portrait" loading="lazy">
+                        <figcaption class="research-story__caption">Natalia and Nicolas, founding team</figcaption>
+                    </figure>
+
                     <div class="research-story__content">
                         <p>
                             This gave me hope. I hope that the pump will restore my natural cortisol rhythms - and those of many others! -, eliminate brain fog and fatigue, and allow me to reconnect with the vibrant person I love being.
