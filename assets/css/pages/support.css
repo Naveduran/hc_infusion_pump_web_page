@@ -1,56 +1,49 @@
-/* Page-specific styles */
-.hero__subtitle {
+/* Support Page Styles - Mobile First */
+
+/* Page-specific hero styles */
+.page-support .hero__subtitle {
   font-size: var(--font-size-lg);
   color: var(--gray-600);
 }
 
-.card--centered {
+.page-support .card--centered {
   max-width: 800px;
   margin: 0 auto;
 }
 
-.card--narrow {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.card p {
+/* Support page card text alignment */
+.page-support .card:not(.card--team) p {
   text-align: center;
   padding: 0 var(--space-3);
 }
 
-.card:last-child p {
+.page-support .section .card:last-child p {
   padding: 0;
 }
 
-.card:last-child p:first-of-type {
+.page-support .section .card:last-child p:first-of-type {
   padding-top: var(--space-4);
 }
 
-.card:last-child p:last-of-type {
+.page-support .section .card:last-child p:last-of-type {
   padding-bottom: var(--space-4);
 }
 
-.card:nth-child(2) p {
+.page-support .section .card:nth-child(2) p {
   padding: var(--space-3);
 }
 
-.card:first-child p {
+.page-support .section .card:first-child p {
   padding: var(--space-3);
 }
 
-/* Section styles moved to layout/grid.css */
-
-.text--center-block {
+/* Support page specific components */
+.page-support .text--center-block {
   text-align: center;
   margin-top: var(--space-8);
 }
 
-/* Utility classes moved to utilities.css */
-
-/* Use btn-group component for share buttons */
-.share-buttons {
+.page-support .share-buttons {
   display: flex;
   gap: var(--space-2);
   flex-wrap: wrap;
@@ -59,51 +52,51 @@
 }
 
 @media (min-width: 768px) {
-  .share-buttons {
+  .page-support .share-buttons {
     gap: var(--space-3);
     justify-content: center;
   }
 }
 
-.action-button {
+.page-support .action-button {
   margin-top: var(--space-4);
   justify-self: center;
 }
 
-.research-card {
+.page-support .research-card {
   display: flex;
   gap: var(--space-4);
   align-items: flex-start;
 }
 
-.research-card__image {
+.page-support .research-card__image {
   border-radius: 50%;
   flex-shrink: 0;
 }
 
-.research-card__content {
+.page-support .research-card__content {
   flex: 1;
 }
 
-.research-card__button {
+.page-support .research-card__button {
   margin-top: var(--space-4);
 }
 
-.card--compact {
+.page-support .card--compact {
   max-width: 700px;
   margin: 0;
   text-align: left;
 }
 
-.research-card--no-image {
+.page-support .research-card--no-image {
   display: block;
 }
 
-.research-card--no-image .research-card__content {
+.page-support .research-card--no-image .research-card__content {
   margin: 0;
 }
 
-.collapsible-header {
+.page-support .collapsible-header {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -112,24 +105,24 @@
   border-bottom: 1px solid var(--gray-200);
 }
 
-.collapsible-icon {
+.page-support .collapsible-icon {
   width: 24px;
   height: 24px;
   transition: transform 0.3s ease;
 }
 
-.collapsible-content {
+.page-support .collapsible-content {
   padding: var(--space-4) 0;
 }
 
-.research-item {
+.page-support .research-item {
   margin-bottom: var(--space-4);
   padding: var(--space-3);
   border: 1px solid var(--gray-200);
   border-radius: var(--border-radius);
 }
 
-.research-title {
+.page-support .research-title {
   cursor: pointer;
   margin: 0;
   padding: var(--space-2) 0;
@@ -137,17 +130,17 @@
   font-size: 1.25rem;
 }
 
-.research-title:hover {
+.page-support .research-title:hover {
   color: var(--primary-orange);
 }
 
-.research-details {
+.page-support .research-details {
   padding-top: var(--space-3);
   border-top: 1px solid var(--gray-100);
   margin-top: var(--space-3);
 }
 
-.roles-list {
+.page-support .roles-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -155,7 +148,7 @@
   justify-content: center;
 }
 
-.role-tag {
+.page-support .role-tag {
   background: var(--gray-100);
   padding: 0.3rem 0.8rem;
   border-radius: 15px;

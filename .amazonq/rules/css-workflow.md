@@ -9,8 +9,9 @@
 ## Creating New Page Styles
 1. Create file: `assets/css/pages/[page-name].css`
 2. Add import to `assets/css/main.css` in pages section
-3. Use BEM naming: `.page-name__element--modifier`
-4. Start with mobile styles, add desktop with media queries
+3. Use page-specific prefix: `.page-[name] .component`
+4. Use BEM naming: `.page-[name] .component__element--modifier`
+5. Start with mobile styles, add desktop with media queries
 
 ## Creating New Component Styles
 1. Create file: `assets/css/components/[component-name].css`
@@ -47,3 +48,4 @@ Every CSS change MUST pass:
 - [ ] Follows property order convention
 - [ ] No nesting beyond 2 levels
 - [ ] Includes hover/focus states where needed
+- [ ] Page styles prefixed with `.page-[name]` (prevents cross-page conflicts)
