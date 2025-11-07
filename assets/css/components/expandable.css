@@ -1,0 +1,46 @@
+/* Expandable Component */
+
+.expandable {
+  margin: var(--space-4) 0;
+}
+
+.expandable__trigger {
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  padding: var(--space-3);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all var(--transition-base);
+  width: 100%;
+  text-align: left;
+}
+
+.expandable__trigger:hover {
+  background: var(--gray-200);
+}
+
+.expandable__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow);
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-top: none;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.expandable__content.expanded {
+  max-height: 500px;
+  padding: var(--space-4);
+}
+
+.expandable__icon {
+  transition: transform var(--transition-slow);
+}
+
+.expandable__icon.rotated {
+  transform: rotate(180deg);
+}

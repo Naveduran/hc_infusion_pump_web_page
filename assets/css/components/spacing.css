@@ -1,0 +1,59 @@
+/* Spacing utilities following BEM methodology */
+
+/* Key insight spacing modifiers */
+.key-insight--spaced {
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
+.key-insight--extra-spaced {
+  margin-top: var(--space-12);
+  margin-bottom: 0;
+}
+
+/* CTA actions spacing */
+.cta__actions--spaced {
+  margin-top: var(--space-8);
+}
+
+/* Research story action centering */
+.research-story__action--centered {
+  text-align: center;
+  margin-top: var(--space-8);
+}
+
+/* Expandable content spacing */
+.expandable__content--expanded {
+  max-height: 500px;
+  padding: var(--space-4);
+}
+
+/* Team section heading centering */
+.heading-2--centered {
+  text-align: center;
+}
+
+/* CTA description spacing */
+.cta__description--spaced {
+  margin-bottom: var(--space-8);
+}
+
+/* Transparency section final text */
+.transparency__final-text {
+  text-align: center;
+  margin-top: var(--space-12);
+}
+
+/* Survival statement spacing */
+.survival-statement {
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-6);
+}
+
+/* Mobile-first responsive spacing */
+@media (min-width: 768px) {
+  .key-insight--spaced {
+    margin-top: var(--space-16);
+    margin-bottom: var(--space-16);
+  }
+}

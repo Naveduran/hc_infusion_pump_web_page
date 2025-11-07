@@ -1,0 +1,79 @@
+/* Team page styles - Mobile First */
+
+/* Defensive overrides to prevent support page styles from affecting team */
+.page-team .card p {
+  text-align: left;
+  padding: 0;
+}
+
+.page-team .section .card p {
+  padding: 0;
+}
+
+/* Team Cards */
+.page-team .card--team {
+  text-align: center;
+  padding: var(--space-6);
+}
+
+.page-team .card--team .card__image {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  margin: 0 auto var(--space-4);
+  display: block;
+}
+
+.page-team .card--team .heading-4 {
+  margin-bottom: var(--space-3);
+  color: var(--gray-900);
+}
+
+.page-team .card__roles {
+  margin-bottom: var(--space-4);
+  line-height: 1;
+}
+
+.page-team .card__role {
+  margin: 0;
+  padding: 0;
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  line-height: 1.1;
+}
+
+.page-team .card__role + .card__role {
+  margin-top: 0;
+}
+
+.page-team .card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: color var(--transition-base);
+}
+
+.page-team .card__link:hover {
+  color: var(--primary-orange);
+}
+
+.page-team .card__link .btn__icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .card--team {
+    padding: var(--space-4);
+  }
+  
+  .card--team .card__image {
+    width: 140px;
+    height: 140px;
+  }
+}

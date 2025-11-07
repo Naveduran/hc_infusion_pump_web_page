@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; img-src 'self' data: https:; frame-src 'none'; object-src 'none';">
+    <title>Sources - OpenCortisol</title>
+    <meta name="description" content="Scientific foundation and research sources supporting our hydrocortisone pump development initiative.">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="page-sources">
+        <header class="header">
+        <nav class="nav container">
+            <div class="nav__logo">OpenCortisol Project</div>
+            <ul class="nav__menu">
+                <li><a href="https://naveduran.github.io/open_cortisol/" class="nav__link">Home</a></li>
+                <li><a href="mystory.html" class="nav__link">Story</a></li>
+                <li><a href="team.html" class="nav__link">Team</a></li>
+                <li><a href="support.html" class="nav__link">Support</a></li>
+                <li><a href="sources.html" class="nav__link">Sources</a></li>
+                <li><a href="https://naveduran.github.io/open_cortisol/es/" class="nav__link nav__link--lang">Español</a></li>
+            </ul>
+
+            <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+            <nav class="nav__mobile" role="navigation" aria-label="Mobile navigation">
+                <a href="https://naveduran.github.io/open_cortisol/" class="nav__mobile-link">Home</a>
+                <a href="mystory.html" class="nav__mobile-link">Story</a>
+                <a href="team.html" class="nav__mobile-link">Team</a>
+                <a href="support.html" class="nav__mobile-link">Support</a>
+                <a href="sources.html" class="nav__mobile-link">Sources</a>
+                <a href="https://naveduran.github.io/open_cortisol/es/" class="nav__mobile-link nav__mobile-link--lang">Español</a>
+            </nav>
+        </nav>
+    </header>
+    
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.nav__toggle');
+            const mobileMenu = document.querySelector('.nav__mobile');
+            
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('nav__mobile--active');
+                });
+            }
+        });
+    </script>
+    <script type="module" src="assets/js/language-switcher.js"></script>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="heading-1">Sources</h1>
+                <p class="text-large hero__description">
+                    Scientific research that underpins our project
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="text--center">
+                    <h2 class="heading-2">Próximamente</h2>
+                    <p class="text--large">
+                        Estamos compilando una biblioteca de fuentes científicas para que todos podamos informarnos. Esta página estará disponible pronto con estudios sobre:
+                    </p>
+                    <ul class="text--left sources__list">
+                        <li>Los ritmos circadianos y ultradianos de producción natural de cortisol y ACTH</li>
+                        <li>Bombas de infusión de hidrocortisona</li>
+                        <li>Bombas de infusión de otros medicamentos</li>
+                        <li>Modelos matemáticos para emular la farmacocinética de la hidrocortisona</li>
+                        <li>Monitores de cortisol</li>
+                    </ul>
+                    <div class="cta__actions cta__actions--spaced">
+                        <a href="index.html" class="btn btn--primary">
+                            Volver al Inicio
+                        </a>
+                        <a href="mystory.html" class="btn btn--secondary">
+                            Ver Investigación
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 OpenCortisol Project. Open-source initiative for better treatment of adrenal insufficiency.</p>
+        </div>
+    </footer>
+    <script type="module" src="assets/js/sources.js"></script>
+</body>
+</html>
