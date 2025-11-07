@@ -16,12 +16,17 @@
 - NO hardcoded colors, spacing, or font sizes
 - ADD new variables to `base/variables.css` if needed
 
+## Page-Specific CSS Isolation (MANDATORY)
+- ALL page styles MUST be prefixed with `.page-[pagename]`
+- NO generic selectors that affect multiple pages
+- ALWAYS scope styles to prevent cross-page conflicts
+
 ## Required CSS Structure Template
 ```css
-/* [Component/Page] Name - Mobile First */
+/* [Page] Page Styles - Mobile First */
 
-/* Main Block */
-.[block] {
+/* Page-specific styles - ALWAYS prefix with .page-[name] */
+.page-[name] .[block] {
   /* Layout properties first */
   display: flex;
   /* Spacing */
@@ -33,24 +38,24 @@
 }
 
 /* Elements */
-.[block]__[element] {
+.page-[name] .[block]__[element] {
   /* Properties */
 }
 
 /* Modifiers */
-.[block]--[modifier] {
+.page-[name] .[block]--[modifier] {
   /* Override properties */
 }
 
 /* States */
-.[block]:hover,
-.[block]:focus {
+.page-[name] .[block]:hover,
+.page-[name] .[block]:focus {
   /* State changes */
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-  .[block] {
+  .page-[name] .[block] {
     /* Mobile overrides */
   }
 }

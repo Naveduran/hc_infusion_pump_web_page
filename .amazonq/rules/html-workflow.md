@@ -72,3 +72,4 @@ Every HTML file MUST have:
 - [ ] Data attributes for JavaScript functionality
 - [ ] Corresponding CSS and JS files created
 - [ ] No inline styles or scripts
+- [ ] Body class="page-[name]" for CSS isolation
