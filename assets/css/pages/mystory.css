@@ -1,0 +1,172 @@
+/* My Story Page - Mobile First */
+
+/* Research Story Layout */
+.research-story {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.research-story__content {
+  margin-bottom: var(--space-6);
+  overflow: hidden; /* Clearfix for floated elements */
+}
+
+.research-story__content::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Image Styling */
+.research-story__image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  margin: var(--space-8) auto;
+  display: block;
+}
+
+.research-story__image--portrait {
+  max-width: 300px;
+  float: right;
+  margin: 0 0 var(--space-4) var(--space-6);
+}
+
+.research-story__image--prototype {
+  max-width: 500px;
+  margin: var(--space-6) auto var(--space-8) auto;
+}
+
+/* Figure Elements */
+.research-story__figure {
+  margin: var(--space-8) 0;
+  text-align: center;
+}
+
+.research-story__figure--portrait {
+  float: right;
+  margin: 0 0 var(--space-4) var(--space-6);
+  max-width: 300px;
+}
+
+.research-story__caption {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  margin-top: var(--space-2);
+  font-style: italic;
+}
+
+/* Pull Quote - Style 16: Soft Bubble */
+.pull-quote {
+  margin: var(--space-6) 0;
+  padding: var(--space-4);
+  background: var(--info-light);
+  color: var(--gray-800);
+  border-radius: 20px;
+  position: relative;
+  clear: both; /* Clear floated images */
+}
+
+.pull-quote::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--info-light);
+}
+
+.pull-quote__text {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  color: var(--gray-800);
+  margin: 0;
+  font-style: normal;
+}
+
+/* Action Buttons */
+.research-story__action {
+  margin: var(--space-8) 0;
+}
+
+.research-story__action--centered {
+  text-align: center;
+}
+
+/* Timeline Integration */
+.timeline-item {
+  margin-bottom: var(--space-6);
+  position: relative;
+  padding-left: var(--space-8);
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: var(--space-2);
+  width: 12px;
+  height: 12px;
+  background: var(--primary-blue);
+  border-radius: 50%;
+}
+
+/* Desktop Layout Adjustments */
+@media (min-width: 769px) {
+  .research-story__content {
+    margin-left: 0;
+    margin-right: 320px; /* Space for floated portrait */
+  }
+  
+  .research-story__content--no-float {
+    margin-right: 0; /* Reset for sections without floated images */
+  }
+}
+
+/* Icon Styling */
+.research-story__icon {
+  font-size: 3rem;
+  text-align: center;
+  margin: var(--space-6) 0;
+  display: block;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .research-story__image--portrait,
+  .research-story__figure--portrait {
+    float: none;
+    margin: var(--space-4) auto;
+    max-width: 250px;
+  }
+  
+  .research-story__image--prototype {
+    max-width: 100%;
+    margin: var(--space-4) auto;
+  }
+  
+  .pull-quote {
+    margin: var(--space-4) 0;
+    padding: var(--space-3);
+  }
+  
+  .pull-quote__text {
+    font-size: var(--font-size-base);
+  }
+  
+  .timeline-item {
+    padding-left: var(--space-6);
+  }
+  
+  .research-story__content {
+    margin-right: 0; /* Reset desktop margin on mobile */
+  }
+  
+  .research-story__icon {
+    font-size: 2.5rem;
+  }
+}

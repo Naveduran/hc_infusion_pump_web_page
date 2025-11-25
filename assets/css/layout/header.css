@@ -1,0 +1,111 @@
+.header {
+  background: white;
+  box-shadow: var(--shadow);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) 0;
+}
+
+.nav__logo {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--primary-blue);
+  padding-left: var(--space-2);
+}
+
+.nav__menu {
+  display: none;
+  gap: var(--space-8);
+}
+
+.nav__link {
+  color: var(--gray-600);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  color: var(--primary-blue);
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Language Switcher - Style 3: Globe Icon with Border */
+.nav__link--lang {
+  border: 1px solid var(--gray-300);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--border-radius);
+  background: var(--gray-50);
+  transition: all var(--transition-base);
+}
+
+.nav__link--lang::before {
+  content: '🌐 ';
+  margin-right: var(--space-1);
+}
+
+.nav__link--lang:hover {
+  background: var(--gray-100);
+  border-color: var(--gray-400);
+}
+
+.nav__mobile-link--lang {
+  border: 1px solid var(--gray-300);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--border-radius);
+  background: var(--gray-50);
+  margin-top: var(--space-2);
+}
+
+.nav__mobile-link--lang::before {
+  content: '🌐 ';
+  margin-right: var(--space-1);
+}
+
+.nav__toggle {
+  display: block;
+  font-size: var(--font-size-2xl);
+  color: var(--gray-600);
+}
+
+.nav__mobile {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: var(--shadow);
+  padding: var(--space-4);
+}
+
+.nav__mobile--active {
+  display: block;
+}
+
+.nav__mobile-link {
+  display: block;
+  padding: var(--space-2) 0;
+  color: var(--gray-600);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+/* Desktop navigation */
+@media (min-width: 768px) {
+  .nav__menu {
+    display: flex;
+  }
+  
+  .nav__toggle {
+    display: none;
+  }
+}

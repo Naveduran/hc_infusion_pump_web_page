@@ -1,0 +1,49 @@
+/* Utility classes */
+
+/* Text utilities */
+.text--center {
+  text-align: center;
+}
+
+.text--large {
+  font-size: var(--font-size-lg);
+}
+
+.text--bold {
+  font-weight: 600;
+}
+
+.text--highlight {
+  margin-top: var(--space-12);
+  margin-bottom: 0;
+  color: var(--primary-orange);
+}
+
+.text--large-block {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-4);
+}
+
+.text--small {
+  font-size: var(--font-size-sm);
+  color: var(--gray-500);
+  margin-top: var(--space-4);
+}
+
+/* Visual utilities */
+.emoji--large {
+  font-size: 4rem;
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

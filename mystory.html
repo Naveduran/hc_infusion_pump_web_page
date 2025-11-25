@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; img-src 'self' data: https:; frame-src 'none'; object-src 'none'; form-action 'self' https://www.paypal.com;">
+    <title>My story - OpenCortisol</title>
+    <meta name="description" content="The research journey behind the OpenCortisol Project - from patient struggle to scientific discovery and open-source innovation.">
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="assets/css/main.css" as="style">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="page-mystory">
+        <header class="header">
+        <nav class="nav container">
+            <div class="nav__logo">OpenCortisol Project</div>
+            <ul class="nav__menu">
+                <li><a href="https://naveduran.github.io/open_cortisol/" class="nav__link">Home</a></li>
+                <li><a href="mystory.html" class="nav__link">Story</a></li>
+                <li><a href="team.html" class="nav__link">Team</a></li>
+                <li><a href="support.html" class="nav__link">Support</a></li>
+                <li><a href="sources.html" class="nav__link">Sources</a></li>
+                <li><a href="https://naveduran.github.io/open_cortisol/es/" class="nav__link nav__link--lang">Español</a></li>
+            </ul>
+
+            <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+            <nav class="nav__mobile" role="navigation" aria-label="Mobile navigation">
+                <a href="https://naveduran.github.io/open_cortisol/" class="nav__mobile-link">Home</a>
+                <a href="mystory.html" class="nav__mobile-link">Story</a>
+                <a href="team.html" class="nav__mobile-link">Team</a>
+                <a href="support.html" class="nav__mobile-link">Support</a>
+                <a href="sources.html" class="nav__mobile-link">Sources</a>
+                <a href="https://naveduran.github.io/open_cortisol/es/" class="nav__mobile-link nav__mobile-link--lang">Español</a>
+            </nav>
+        </nav>
+    </header>
+    
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.nav__toggle');
+            const mobileMenu = document.querySelector('.nav__mobile');
+            
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('nav__mobile--active');
+                });
+            }
+        });
+    </script>
+    <script type="module" src="assets/js/language-switcher.js"></script>
+
+    <main>
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="container">
+                <h1 class="heading-1">My Story</h1>
+                <p class="text-large hero__description">
+                    From patient struggle to scientific discovery - the story behind our mission
+                </p>
+            </div>
+        </header>
+
+        <!-- Introduction Section -->
+        <section class="section" aria-labelledby="introduction-heading">
+            <div class="container">
+                <h2 id="introduction-heading" class="heading-2">How It All Started</h2>
+                
+                <article class="research-story">
+                    <figure class="research-story__figure research-story__figure--portrait">
+                        <img src="assets/images/salmon.jpg" alt="Photo of Natalia" class="research-story__image research-story__image--portrait" loading="lazy">
+                        <figcaption class="research-story__caption">Natalia, project founder</figcaption>
+                    </figure>
+
+                    <div class="research-story__content">
+                        <p>Hi! I'm Natalia and I have adrenal insufficiency since 2023.</p>
+                        
+                        <div class="pull-quote">
+                            <p class="pull-quote__text">
+                                The "optimal" treatment wasn't working for me.
+                            </p>
+                        </div>
+                        
+                        <p>
+                            The brain fog and constant fatigue made me a stranger to myself. At first I thought it was exhaustion from working too much but no amount of rest worked. I couldn't think clearly or quickly, which meant I couldn't work or study.
+                        </p>
+                        
+                        <div class="pull-quote">
+                            <p class="pull-quote__text">
+                                Life stopped at my best moment, just when things were starting to go really well.
+                            </p>
+                        </div>
+                        
+                        <p>
+                            Desperate and without strength, I couldn't stop searching for a solution, even if it was at the speed of a lame turtle. First I went to dozens of doctors until I got my diagnosis, and then, using my academic background, I began reading hundreds of research articles to understand what was happening to me and why the treatment wasn't working.
+                        </p>
+                        
+                        <p>
+                            I finally understood that my symptoms had already been studied by many endocrinologists. They had proposals to solve it: rigorous studies showed that cortisol pumps could mimic the body's natural rhythms and significantly improve quality of life... But... they weren't available to me.
+                        </p>
+                    </div>
+                    
+                    <div class="research-story__action">
+                        <a href="sources.html" class="btn btn--secondary">
+                            <svg class="btn__icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                            Research with hydrocortisone pumps
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Discovery Section -->
+        <section class="section section--light" aria-labelledby="discovery-heading">
+            <div class="container">
+                <h2 id="discovery-heading" class="heading-2">The Discovery</h2>
+                
+                <article class="research-story">
+                    <figure class="research-story__figure">
+                        <img src="assets/images/insulin-pump-payne.png" alt="Open-source insulin pump prototype developed by Payne" class="research-story__image research-story__image--prototype" loading="lazy">
+                        <figcaption class="research-story__caption">$89 Insulin Pump - Open Source Prototype</figcaption>
+                    </figure>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div>
+                            <p>Commercial drug infusion pumps cost... $3,000. $4,500. $6,500 dollars, and even if I could buy them, they didn't deliver medications with the rhythms required for cortisol. My heart sank. Not only were they extremely expensive, but they weren't available in my country.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div>
+                            <p>But I never give up. I expanded my search and found an article about an $89 insulin pump that worked as well as the expensive ones and could be reprogrammed because it was <a href="https://www.google.com/search?q=open+source">"open source"</a>. The researchers had shared everything for free: bill of materials, assembly instructions, 3D print-ready design... and all without patents or barriers.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div>
+                            <p>At that moment I saw it clearly: we had everything to build a solution.</p>
+                        </div>
+                    </div>
+
+                    <div class="expandable">
+                        <div class="expandable__trigger" data-action="toggle-expandable">
+                            <span><strong>Technical Details:</strong> How the $89 pump works</span>
+                            <svg class="expandable__icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </div>
+                        <div class="expandable__content">
+                            <p><strong>Materials:</strong> 3D-printed housing, Arduino microcontroller, stepper motor, medical-grade tubing</p>
+                            <p><strong>Performance:</strong> ±5% accuracy in insulin delivery, 72-hour battery life, programmable basal rates</p>
+                            <p><strong>Safety:</strong> Occlusion detection, low battery alerts, fail-safe mechanisms</p>
+                            <p><strong>Cost Breakdown:</strong> Electronics ($45), 3D printing materials ($12), tubing and connectors ($18), assembly ($14)</p>
+                        </div>
+                    </div>
+
+                    <div class="research-story__action--centered">
+                        <a href="sources.html" class="btn btn--primary">
+                            <svg class="btn__icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            Open Source Insulin Pump Details
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Innovation Section -->
+        <section class="section" aria-labelledby="innovation-heading">
+            <div class="container">
+                <h2 id="innovation-heading" class="heading-2">The Innovation</h2>
+                
+                <article class="research-story">
+                    <div class="research-story__icon">💡</div>
+                    
+                    <div class="pull-quote">
+                        <p class="pull-quote__text">
+                            We could combine the research on hydrocortisone pulsatile rhythms with low-cost open-source 3D-printable devices.
+                        </p>
+                        <p class="pull-quote__text">
+                            We could create a low-cost open-source 3D-printable hydrocortisone pump.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Hope Section -->
+        <section class="section section--light" aria-labelledby="hope-heading">
+            <div class="container">
+                <h2 id="hope-heading" class="heading-2">Renewed Hope</h2>
+                
+                <article class="research-story">
+                    <figure class="research-story__figure research-story__figure--portrait">
+                        <img src="assets/images/nata-and-nico.jpg" alt="Natalia and Nicolas, OpenCortisol project founders" class="research-story__image research-story__image--portrait" loading="lazy">
+                        <figcaption class="research-story__caption">Natalia and Nicolas, founding team</figcaption>
+                    </figure>
+
+                    <div class="research-story__content">
+                        <p>
+                            This gave me hope. I hope that the pump will restore my natural cortisol rhythms - and those of many others! -, eliminate brain fog and fatigue, and allow me to reconnect with the vibrant person I love being.
+                        </p>
+                        
+                        <div class="pull-quote">
+                            <p class="pull-quote__text">
+                                I want to make a difference again and earn a living for my family.
+                            </p>
+                        </div>
+                        
+                        <p>
+                            We created this website with my partner, who has supported me throughout this process, to share this hope and find collaborators.
+                        </p>
+                    </div>
+                    
+                    <div class="research-story__action research-story__action--centered">
+                        <a href="support.html" class="btn btn--primary btn--large">
+                            <svg class="btn__icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                            Join Our Mission
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+        <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 OpenCortisol Project. Open-source initiative for better treatment of adrenal insufficiency.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="assets/js/buttons.js"></script>
+    <script type="module" src="assets/js/mystory-page.js"></script>
+</body>
+</html>
